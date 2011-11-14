@@ -1,0 +1,466 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6E13FB411471B59100871973 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E13FB401471B59100871973 /* UIKit.framework */; };
+		6E13FB431471B59100871973 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E13FB421471B59100871973 /* Foundation.framework */; };
+		6E13FB451471B59100871973 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E13FB441471B59100871973 /* CoreGraphics.framework */; };
+		6E13FB4B1471B59100871973 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6E13FB491471B59100871973 /* InfoPlist.strings */; };
+		6E13FB4D1471B59100871973 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E13FB4C1471B59100871973 /* main.m */; };
+		6E13FB511471B59100871973 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E13FB501471B59100871973 /* AppDelegate.m */; };
+		6E13FB541471B59100871973 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E13FB521471B59100871973 /* MainStoryboard.storyboard */; };
+		6E13FB571471B59100871973 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E13FB561471B59100871973 /* FirstViewController.m */; };
+		6E13FB591471B59100871973 /* first.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E13FB581471B59100871973 /* first.png */; };
+		6E13FB5B1471B59100871973 /* first@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E13FB5A1471B59100871973 /* first@2x.png */; };
+		6E13FB5E1471B59100871973 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E13FB5D1471B59100871973 /* SecondViewController.m */; };
+		6E13FB601471B59100871973 /* second.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E13FB5F1471B59100871973 /* second.png */; };
+		6E13FB621471B59100871973 /* second@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E13FB611471B59100871973 /* second@2x.png */; };
+		6E13FB6A1471B59100871973 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E13FB691471B59100871973 /* SenTestingKit.framework */; };
+		6E13FB6B1471B59100871973 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E13FB401471B59100871973 /* UIKit.framework */; };
+		6E13FB6C1471B59100871973 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E13FB421471B59100871973 /* Foundation.framework */; };
+		6E13FB741471B59100871973 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6E13FB721471B59100871973 /* InfoPlist.strings */; };
+		6E13FB771471B59100871973 /* Dining_UNLTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E13FB761471B59100871973 /* Dining_UNLTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		6E13FB6D1471B59100871973 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6E13FB331471B59000871973 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6E13FB3B1471B59100871973;
+			remoteInfo = "Dining@UNL";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		6E13FB3C1471B59100871973 /* Dining@UNL.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Dining@UNL.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6E13FB401471B59100871973 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		6E13FB421471B59100871973 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		6E13FB441471B59100871973 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		6E13FB481471B59100871973 /* Dining@UNL-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Dining@UNL-Info.plist"; sourceTree = "<group>"; };
+		6E13FB4A1471B59100871973 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		6E13FB4C1471B59100871973 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		6E13FB4E1471B59100871973 /* Dining@UNL-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Dining@UNL-Prefix.pch"; sourceTree = "<group>"; };
+		6E13FB4F1471B59100871973 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		6E13FB501471B59100871973 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		6E13FB531471B59100871973 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		6E13FB551471B59100871973 /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
+		6E13FB561471B59100871973 /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
+		6E13FB581471B59100871973 /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = first.png; sourceTree = "<group>"; };
+		6E13FB5A1471B59100871973 /* first@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "first@2x.png"; sourceTree = "<group>"; };
+		6E13FB5C1471B59100871973 /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
+		6E13FB5D1471B59100871973 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		6E13FB5F1471B59100871973 /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = second.png; sourceTree = "<group>"; };
+		6E13FB611471B59100871973 /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "second@2x.png"; sourceTree = "<group>"; };
+		6E13FB681471B59100871973 /* Dining@UNLTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Dining@UNLTests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6E13FB691471B59100871973 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		6E13FB711471B59100871973 /* Dining@UNLTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Dining@UNLTests-Info.plist"; sourceTree = "<group>"; };
+		6E13FB731471B59100871973 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		6E13FB751471B59100871973 /* Dining_UNLTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Dining_UNLTests.h; sourceTree = "<group>"; };
+		6E13FB761471B59100871973 /* Dining_UNLTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Dining_UNLTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6E13FB391471B59100871973 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6E13FB411471B59100871973 /* UIKit.framework in Frameworks */,
+				6E13FB431471B59100871973 /* Foundation.framework in Frameworks */,
+				6E13FB451471B59100871973 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6E13FB641471B59100871973 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6E13FB6A1471B59100871973 /* SenTestingKit.framework in Frameworks */,
+				6E13FB6B1471B59100871973 /* UIKit.framework in Frameworks */,
+				6E13FB6C1471B59100871973 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6E13FB311471B59000871973 = {
+			isa = PBXGroup;
+			children = (
+				6E13FB461471B59100871973 /* Dining@UNL */,
+				6E13FB6F1471B59100871973 /* Dining@UNLTests */,
+				6E13FB3F1471B59100871973 /* Frameworks */,
+				6E13FB3D1471B59100871973 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		6E13FB3D1471B59100871973 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6E13FB3C1471B59100871973 /* Dining@UNL.app */,
+				6E13FB681471B59100871973 /* Dining@UNLTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6E13FB3F1471B59100871973 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6E13FB401471B59100871973 /* UIKit.framework */,
+				6E13FB421471B59100871973 /* Foundation.framework */,
+				6E13FB441471B59100871973 /* CoreGraphics.framework */,
+				6E13FB691471B59100871973 /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6E13FB461471B59100871973 /* Dining@UNL */ = {
+			isa = PBXGroup;
+			children = (
+				6E13FB4F1471B59100871973 /* AppDelegate.h */,
+				6E13FB501471B59100871973 /* AppDelegate.m */,
+				6E13FB521471B59100871973 /* MainStoryboard.storyboard */,
+				6E13FB551471B59100871973 /* FirstViewController.h */,
+				6E13FB561471B59100871973 /* FirstViewController.m */,
+				6E13FB581471B59100871973 /* first.png */,
+				6E13FB5A1471B59100871973 /* first@2x.png */,
+				6E13FB5C1471B59100871973 /* SecondViewController.h */,
+				6E13FB5D1471B59100871973 /* SecondViewController.m */,
+				6E13FB5F1471B59100871973 /* second.png */,
+				6E13FB611471B59100871973 /* second@2x.png */,
+				6E13FB471471B59100871973 /* Supporting Files */,
+			);
+			path = "Dining@UNL";
+			sourceTree = "<group>";
+		};
+		6E13FB471471B59100871973 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				6E13FB481471B59100871973 /* Dining@UNL-Info.plist */,
+				6E13FB491471B59100871973 /* InfoPlist.strings */,
+				6E13FB4C1471B59100871973 /* main.m */,
+				6E13FB4E1471B59100871973 /* Dining@UNL-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		6E13FB6F1471B59100871973 /* Dining@UNLTests */ = {
+			isa = PBXGroup;
+			children = (
+				6E13FB751471B59100871973 /* Dining_UNLTests.h */,
+				6E13FB761471B59100871973 /* Dining_UNLTests.m */,
+				6E13FB701471B59100871973 /* Supporting Files */,
+			);
+			path = "Dining@UNLTests";
+			sourceTree = "<group>";
+		};
+		6E13FB701471B59100871973 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				6E13FB711471B59100871973 /* Dining@UNLTests-Info.plist */,
+				6E13FB721471B59100871973 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6E13FB3B1471B59100871973 /* Dining@UNL */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6E13FB7A1471B59100871973 /* Build configuration list for PBXNativeTarget "Dining@UNL" */;
+			buildPhases = (
+				6E13FB381471B59100871973 /* Sources */,
+				6E13FB391471B59100871973 /* Frameworks */,
+				6E13FB3A1471B59100871973 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Dining@UNL";
+			productName = "Dining@UNL";
+			productReference = 6E13FB3C1471B59100871973 /* Dining@UNL.app */;
+			productType = "com.apple.product-type.application";
+		};
+		6E13FB671471B59100871973 /* Dining@UNLTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6E13FB7D1471B59100871973 /* Build configuration list for PBXNativeTarget "Dining@UNLTests" */;
+			buildPhases = (
+				6E13FB631471B59100871973 /* Sources */,
+				6E13FB641471B59100871973 /* Frameworks */,
+				6E13FB651471B59100871973 /* Resources */,
+				6E13FB661471B59100871973 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6E13FB6E1471B59100871973 /* PBXTargetDependency */,
+			);
+			name = "Dining@UNLTests";
+			productName = "Dining@UNLTests";
+			productReference = 6E13FB681471B59100871973 /* Dining@UNLTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6E13FB331471B59000871973 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+			};
+			buildConfigurationList = 6E13FB361471B59000871973 /* Build configuration list for PBXProject "Dining@UNL" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 6E13FB311471B59000871973;
+			productRefGroup = 6E13FB3D1471B59100871973 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6E13FB3B1471B59100871973 /* Dining@UNL */,
+				6E13FB671471B59100871973 /* Dining@UNLTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6E13FB3A1471B59100871973 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6E13FB4B1471B59100871973 /* InfoPlist.strings in Resources */,
+				6E13FB541471B59100871973 /* MainStoryboard.storyboard in Resources */,
+				6E13FB591471B59100871973 /* first.png in Resources */,
+				6E13FB5B1471B59100871973 /* first@2x.png in Resources */,
+				6E13FB601471B59100871973 /* second.png in Resources */,
+				6E13FB621471B59100871973 /* second@2x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6E13FB651471B59100871973 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6E13FB741471B59100871973 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6E13FB661471B59100871973 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6E13FB381471B59100871973 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6E13FB4D1471B59100871973 /* main.m in Sources */,
+				6E13FB511471B59100871973 /* AppDelegate.m in Sources */,
+				6E13FB571471B59100871973 /* FirstViewController.m in Sources */,
+				6E13FB5E1471B59100871973 /* SecondViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6E13FB631471B59100871973 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6E13FB771471B59100871973 /* Dining_UNLTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		6E13FB6E1471B59100871973 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6E13FB3B1471B59100871973 /* Dining@UNL */;
+			targetProxy = 6E13FB6D1471B59100871973 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		6E13FB491471B59100871973 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6E13FB4A1471B59100871973 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		6E13FB521471B59100871973 /* MainStoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6E13FB531471B59100871973 /* en */,
+			);
+			name = MainStoryboard.storyboard;
+			sourceTree = "<group>";
+		};
+		6E13FB721471B59100871973 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6E13FB731471B59100871973 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		6E13FB781471B59100871973 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		6E13FB791471B59100871973 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		6E13FB7B1471B59100871973 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Dining@UNL/Dining@UNL-Prefix.pch";
+				INFOPLIST_FILE = "Dining@UNL/Dining@UNL-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		6E13FB7C1471B59100871973 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Dining@UNL/Dining@UNL-Prefix.pch";
+				INFOPLIST_FILE = "Dining@UNL/Dining@UNL-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		6E13FB7E1471B59100871973 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Dining@UNL.app/Dining@UNL";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Dining@UNL/Dining@UNL-Prefix.pch";
+				INFOPLIST_FILE = "Dining@UNLTests/Dining@UNLTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		6E13FB7F1471B59100871973 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Dining@UNL.app/Dining@UNL";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Dining@UNL/Dining@UNL-Prefix.pch";
+				INFOPLIST_FILE = "Dining@UNLTests/Dining@UNLTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6E13FB361471B59000871973 /* Build configuration list for PBXProject "Dining@UNL" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6E13FB781471B59100871973 /* Debug */,
+				6E13FB791471B59100871973 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6E13FB7A1471B59100871973 /* Build configuration list for PBXNativeTarget "Dining@UNL" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6E13FB7B1471B59100871973 /* Debug */,
+				6E13FB7C1471B59100871973 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		6E13FB7D1471B59100871973 /* Build configuration list for PBXNativeTarget "Dining@UNLTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6E13FB7E1471B59100871973 /* Debug */,
+				6E13FB7F1471B59100871973 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 6E13FB331471B59000871973 /* Project object */;
+}
