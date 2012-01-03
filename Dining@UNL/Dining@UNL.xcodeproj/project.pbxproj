@@ -25,6 +25,15 @@
 		6E13FB6C1471B59100871973 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E13FB421471B59100871973 /* Foundation.framework */; };
 		6E13FB741471B59100871973 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6E13FB721471B59100871973 /* InfoPlist.strings */; };
 		6E13FB771471B59100871973 /* Dining_UNLTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E13FB761471B59100871973 /* Dining_UNLTests.m */; };
+		6E20476614B3994A008A165F /* FoodSection.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E20476514B3994A008A165F /* FoodSection.m */; };
+		6E20476A14B39997008A165F /* MealService.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E20476914B39997008A165F /* MealService.m */; };
+		6E20476D14B399B5008A165F /* ServiceDay.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E20476C14B399B5008A165F /* ServiceDay.m */; };
+		6E20477014B399C6008A165F /* Hall.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E20476F14B399C6008A165F /* Hall.m */; };
+		6E20477314B399E0008A165F /* DiningHallAPIController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E20477214B399E0008A165F /* DiningHallAPIController.m */; };
+		6E20477514B39A59008A165F /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E20477414B39A59008A165F /* MapKit.framework */; };
+		6E20477714B39B57008A165F /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E20477614B39B57008A165F /* CoreLocation.framework */; };
+		6E5176BC1487F1ED004D0C11 /* Favorites.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6E5176BA1487F1ED004D0C11 /* Favorites.xcdatamodeld */; };
+		6E5176C01487F3DC004D0C11 /* FoodItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E5176BF1487F3DC004D0C11 /* FoodItem.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +72,21 @@
 		6E13FB731471B59100871973 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6E13FB751471B59100871973 /* Dining_UNLTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Dining_UNLTests.h; sourceTree = "<group>"; };
 		6E13FB761471B59100871973 /* Dining_UNLTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Dining_UNLTests.m; sourceTree = "<group>"; };
+		6E20476414B3994A008A165F /* FoodSection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoodSection.h; sourceTree = "<group>"; };
+		6E20476514B3994A008A165F /* FoodSection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FoodSection.m; sourceTree = "<group>"; };
+		6E20476814B39997008A165F /* MealService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MealService.h; sourceTree = "<group>"; };
+		6E20476914B39997008A165F /* MealService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MealService.m; sourceTree = "<group>"; };
+		6E20476B14B399B5008A165F /* ServiceDay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServiceDay.h; sourceTree = "<group>"; };
+		6E20476C14B399B5008A165F /* ServiceDay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServiceDay.m; sourceTree = "<group>"; };
+		6E20476E14B399C6008A165F /* Hall.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Hall.h; sourceTree = "<group>"; };
+		6E20476F14B399C6008A165F /* Hall.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Hall.m; sourceTree = "<group>"; };
+		6E20477114B399E0008A165F /* DiningHallAPIController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiningHallAPIController.h; sourceTree = "<group>"; };
+		6E20477214B399E0008A165F /* DiningHallAPIController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiningHallAPIController.m; sourceTree = "<group>"; };
+		6E20477414B39A59008A165F /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		6E20477614B39B57008A165F /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		6E5176BB1487F1ED004D0C11 /* Favorites.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Favorites.xcdatamodel; sourceTree = "<group>"; };
+		6E5176BE1487F3DC004D0C11 /* FoodItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoodItem.h; sourceTree = "<group>"; };
+		6E5176BF1487F3DC004D0C11 /* FoodItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FoodItem.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +94,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6E20477714B39B57008A165F /* CoreLocation.framework in Frameworks */,
+				6E20477514B39A59008A165F /* MapKit.framework in Frameworks */,
 				6E13FB411471B59100871973 /* UIKit.framework in Frameworks */,
 				6E13FB431471B59100871973 /* Foundation.framework in Frameworks */,
 				6E13FB451471B59100871973 /* CoreGraphics.framework in Frameworks */,
@@ -111,6 +137,8 @@
 		6E13FB3F1471B59100871973 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6E20477614B39B57008A165F /* CoreLocation.framework */,
+				6E20477414B39A59008A165F /* MapKit.framework */,
 				6E13FB401471B59100871973 /* UIKit.framework */,
 				6E13FB421471B59100871973 /* Foundation.framework */,
 				6E13FB441471B59100871973 /* CoreGraphics.framework */,
@@ -134,6 +162,19 @@
 				6E13FB5F1471B59100871973 /* second.png */,
 				6E13FB611471B59100871973 /* second@2x.png */,
 				6E13FB471471B59100871973 /* Supporting Files */,
+				6E5176BA1487F1ED004D0C11 /* Favorites.xcdatamodeld */,
+				6E5176BE1487F3DC004D0C11 /* FoodItem.h */,
+				6E20476414B3994A008A165F /* FoodSection.h */,
+				6E20476814B39997008A165F /* MealService.h */,
+				6E20476B14B399B5008A165F /* ServiceDay.h */,
+				6E20476E14B399C6008A165F /* Hall.h */,
+				6E20477114B399E0008A165F /* DiningHallAPIController.h */,
+				6E20477214B399E0008A165F /* DiningHallAPIController.m */,
+				6E20476F14B399C6008A165F /* Hall.m */,
+				6E20476C14B399B5008A165F /* ServiceDay.m */,
+				6E20476914B39997008A165F /* MealService.m */,
+				6E20476514B3994A008A165F /* FoodSection.m */,
+				6E5176BF1487F3DC004D0C11 /* FoodItem.m */,
 			);
 			path = "Dining@UNL";
 			sourceTree = "<group>";
@@ -282,6 +323,13 @@
 				6E13FB511471B59100871973 /* AppDelegate.m in Sources */,
 				6E13FB571471B59100871973 /* FirstViewController.m in Sources */,
 				6E13FB5E1471B59100871973 /* SecondViewController.m in Sources */,
+				6E5176BC1487F1ED004D0C11 /* Favorites.xcdatamodeld in Sources */,
+				6E5176C01487F3DC004D0C11 /* FoodItem.m in Sources */,
+				6E20476614B3994A008A165F /* FoodSection.m in Sources */,
+				6E20476A14B39997008A165F /* MealService.m in Sources */,
+				6E20476D14B399B5008A165F /* ServiceDay.m in Sources */,
+				6E20477014B399C6008A165F /* Hall.m in Sources */,
+				6E20477314B399E0008A165F /* DiningHallAPIController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -451,6 +499,7 @@
 				6E13FB7C1471B59100871973 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6E13FB7D1471B59100871973 /* Build configuration list for PBXNativeTarget "Dining@UNLTests" */ = {
 			isa = XCConfigurationList;
@@ -459,8 +508,22 @@
 				6E13FB7F1471B59100871973 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		6E5176BA1487F1ED004D0C11 /* Favorites.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				6E5176BB1487F1ED004D0C11 /* Favorites.xcdatamodel */,
+			);
+			currentVersion = 6E5176BB1487F1ED004D0C11 /* Favorites.xcdatamodel */;
+			path = Favorites.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 6E13FB331471B59000871973 /* Project object */;
 }
