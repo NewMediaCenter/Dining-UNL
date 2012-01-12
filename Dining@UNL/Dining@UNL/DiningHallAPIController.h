@@ -7,7 +7,25 @@
 //
 
 
-
+#import "Hall.h"
+#import "ServiceDay.h" 
+#import "FoodItem.h"
+#import "FoodSection.h"
 @interface DiningHallAPIController : NSObject
+{
+    
+}
++ (DiningHallAPIController *)sharedController;
+
+- (Hall *) getCurrentHalls;
+
+- (ServiceDay *) getMealForDay:(ServiceDay *)day withHall:(Hall *)theHall;
+
+- (ServiceDay *) getMealForDay:(ServiceDay *)day withHall:(Hall *)theHall forMeal:(MealService *)meal;
+
+- (NSMutableArray *) checkFavorites:(NSMutableArray *)favoritesList;
+
+
+
 
 @end

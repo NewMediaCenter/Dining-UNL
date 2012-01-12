@@ -10,4 +10,16 @@
 
 @implementation DiningHallAPIController
 
+static DiningHallAPIController *sharedController;
+
++ (void)initialize
+{
+    static BOOL initialized = NO;
+    if(!initialized)
+    {
+        initialized = YES;
+        sharedController = [[DiningHallAPIController alloc] init];
+    }
+}
+
 @end

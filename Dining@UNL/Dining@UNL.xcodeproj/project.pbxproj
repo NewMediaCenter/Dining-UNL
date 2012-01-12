@@ -34,6 +34,9 @@
 		6E20477714B39B57008A165F /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E20477614B39B57008A165F /* CoreLocation.framework */; };
 		6E5176BC1487F1ED004D0C11 /* Favorites.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6E5176BA1487F1ED004D0C11 /* Favorites.xcdatamodeld */; };
 		6E5176C01487F3DC004D0C11 /* FoodItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E5176BF1487F3DC004D0C11 /* FoodItem.m */; };
+		6E594FD614BF7B08007EB571 /* NSDataAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E594FD314BF7B08007EB571 /* NSDataAdditions.m */; };
+		6E594FD714BF7B08007EB571 /* TBXML.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E594FD514BF7B08007EB571 /* TBXML.m */; };
+		6E594FD914BF7C7B007EB571 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E594FD814BF7C7B007EB571 /* libz.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +90,11 @@
 		6E5176BB1487F1ED004D0C11 /* Favorites.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Favorites.xcdatamodel; sourceTree = "<group>"; };
 		6E5176BE1487F3DC004D0C11 /* FoodItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoodItem.h; sourceTree = "<group>"; };
 		6E5176BF1487F3DC004D0C11 /* FoodItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FoodItem.m; sourceTree = "<group>"; };
+		6E594FD214BF7B08007EB571 /* NSDataAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDataAdditions.h; sourceTree = "<group>"; };
+		6E594FD314BF7B08007EB571 /* NSDataAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDataAdditions.m; sourceTree = "<group>"; };
+		6E594FD414BF7B08007EB571 /* TBXML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBXML.h; sourceTree = "<group>"; };
+		6E594FD514BF7B08007EB571 /* TBXML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBXML.m; sourceTree = "<group>"; };
+		6E594FD814BF7C7B007EB571 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +102,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6E594FD914BF7C7B007EB571 /* libz.dylib in Frameworks */,
 				6E20477714B39B57008A165F /* CoreLocation.framework in Frameworks */,
 				6E20477514B39A59008A165F /* MapKit.framework in Frameworks */,
 				6E13FB411471B59100871973 /* UIKit.framework in Frameworks */,
@@ -118,6 +127,7 @@
 		6E13FB311471B59000871973 = {
 			isa = PBXGroup;
 			children = (
+				6E594FD814BF7C7B007EB571 /* libz.dylib */,
 				6E13FB461471B59100871973 /* Dining@UNL */,
 				6E13FB6F1471B59100871973 /* Dining@UNLTests */,
 				6E13FB3F1471B59100871973 /* Frameworks */,
@@ -150,6 +160,7 @@
 		6E13FB461471B59100871973 /* Dining@UNL */ = {
 			isa = PBXGroup;
 			children = (
+				6E594FD014BF7AE1007EB571 /* TBXML */,
 				6E13FB4F1471B59100871973 /* AppDelegate.h */,
 				6E13FB501471B59100871973 /* AppDelegate.m */,
 				6E13FB521471B59100871973 /* MainStoryboard.storyboard */,
@@ -207,6 +218,17 @@
 				6E13FB721471B59100871973 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		6E594FD014BF7AE1007EB571 /* TBXML */ = {
+			isa = PBXGroup;
+			children = (
+				6E594FD214BF7B08007EB571 /* NSDataAdditions.h */,
+				6E594FD314BF7B08007EB571 /* NSDataAdditions.m */,
+				6E594FD414BF7B08007EB571 /* TBXML.h */,
+				6E594FD514BF7B08007EB571 /* TBXML.m */,
+			);
+			name = TBXML;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -330,6 +352,8 @@
 				6E20476D14B399B5008A165F /* ServiceDay.m in Sources */,
 				6E20477014B399C6008A165F /* Hall.m in Sources */,
 				6E20477314B399E0008A165F /* DiningHallAPIController.m in Sources */,
+				6E594FD614BF7B08007EB571 /* NSDataAdditions.m in Sources */,
+				6E594FD714BF7B08007EB571 /* TBXML.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
