@@ -17,11 +17,13 @@
 }
 + (DiningHallAPIController *)sharedController;
 
-- (Hall *) getCurrentHalls;
+- (NSMutableArray *) getCurrentHalls;
 
-- (ServiceDay *) getMealForDay:(ServiceDay *)day withHall:(Hall *)theHall;
+- (ServiceDay *) getMealForDay:(NSDate *)day withHall:(Hall *)theHall;
 
-- (ServiceDay *) getMealForDay:(ServiceDay *)day withHall:(Hall *)theHall forMeal:(MealService *)meal;
+- (ServiceDay *) getMealForDay:(NSDate *)day withHall:(Hall *)theHall forMeal:(MealService *)meal;
+
+- (ServiceDay *) getMealForTodaywithHall:(Hall *)theHall;
 
 - (NSMutableArray *) checkFavorites:(NSMutableArray *)favoritesList;
 

@@ -13,7 +13,14 @@
     NSString *hallName;
     CLLocation *hallCoord;
     NSMutableArray *days;
+    int hallID;
     
     
 }
+
+@property (nonatomic, retain) NSString *hallName;
+@property (nonatomic, retain) CLLocation *hallCoord;
+@property (nonatomic, retain) NSMutableArray *days;
+@property (readwrite, assign) int hallID;
+
 @end

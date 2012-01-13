@@ -9,5 +9,8 @@
 #import "Hall.h"
 
 @implementation Hall
-
+@synthesize days;
+@synthesize hallCoord;
+@synthesize hallName;
+@synthesize hallID;
 @end
