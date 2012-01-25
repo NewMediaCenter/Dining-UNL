@@ -9,5 +9,14 @@
 
 
 @interface MealService : NSObject
+{
+    NSDate *serviceStartTime;
+    NSDate *serviceEndTime;
+    NSMutableArray *sectionArray;
+}
+
+@property (nonatomic, retain) NSDate *serviceStartTime;
+@property (nonatomic, retain) NSDate *serviceEndTime;
+@property (nonatomic, retain) NSMutableArray *sectionArray;
 
 @end

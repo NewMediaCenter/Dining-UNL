@@ -10,4 +10,6 @@
 
 @implementation FoodSection
 
+@synthesize foodSectionName;
+@synthesize foodItems;
 @end

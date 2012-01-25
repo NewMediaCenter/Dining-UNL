@@ -10,4 +10,8 @@
 
 @implementation MealService
 
+@synthesize sectionArray;
+@synthesize serviceEndTime;
+@synthesize serviceStartTime;
+
 @end

@@ -13,4 +13,8 @@
     NSString *foodSectionName;
     NSMutableArray *foodItems;
 }
+
+@property (nonatomic, retain) NSString *foodSectionName;
+@property (nonatomic, retain) NSMutableArray *foodItems;
+
 @end

@@ -14,7 +14,7 @@
 		6E13FB4D1471B59100871973 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E13FB4C1471B59100871973 /* main.m */; };
 		6E13FB511471B59100871973 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E13FB501471B59100871973 /* AppDelegate.m */; };
 		6E13FB541471B59100871973 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E13FB521471B59100871973 /* MainStoryboard.storyboard */; };
-		6E13FB571471B59100871973 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E13FB561471B59100871973 /* FirstViewController.m */; };
+		6E13FB571471B59100871973 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E13FB561471B59100871973 /* MasterViewController.m */; };
 		6E13FB591471B59100871973 /* first.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E13FB581471B59100871973 /* first.png */; };
 		6E13FB5B1471B59100871973 /* first@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E13FB5A1471B59100871973 /* first@2x.png */; };
 		6E13FB5E1471B59100871973 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E13FB5D1471B59100871973 /* SecondViewController.m */; };
@@ -61,8 +61,8 @@
 		6E13FB4F1471B59100871973 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		6E13FB501471B59100871973 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		6E13FB531471B59100871973 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		6E13FB551471B59100871973 /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
-		6E13FB561471B59100871973 /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
+		6E13FB551471B59100871973 /* MasterViewController.h */ = {isa = PBXFileReference; path = MasterViewController.h; sourceTree = "<group>"; };
+		6E13FB561471B59100871973 /* MasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
 		6E13FB581471B59100871973 /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = first.png; sourceTree = "<group>"; };
 		6E13FB5A1471B59100871973 /* first@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "first@2x.png"; sourceTree = "<group>"; };
 		6E13FB5C1471B59100871973 /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
@@ -164,8 +164,8 @@
 				6E13FB4F1471B59100871973 /* AppDelegate.h */,
 				6E13FB501471B59100871973 /* AppDelegate.m */,
 				6E13FB521471B59100871973 /* MainStoryboard.storyboard */,
-				6E13FB551471B59100871973 /* FirstViewController.h */,
-				6E13FB561471B59100871973 /* FirstViewController.m */,
+				6E13FB551471B59100871973 /* MasterViewController.h */,
+				6E13FB561471B59100871973 /* MasterViewController.m */,
 				6E13FB581471B59100871973 /* first.png */,
 				6E13FB5A1471B59100871973 /* first@2x.png */,
 				6E13FB5C1471B59100871973 /* SecondViewController.h */,
@@ -343,7 +343,7 @@
 			files = (
 				6E13FB4D1471B59100871973 /* main.m in Sources */,
 				6E13FB511471B59100871973 /* AppDelegate.m in Sources */,
-				6E13FB571471B59100871973 /* FirstViewController.m in Sources */,
+				6E13FB571471B59100871973 /* MasterViewController.m in Sources */,
 				6E13FB5E1471B59100871973 /* SecondViewController.m in Sources */,
 				6E5176BC1487F1ED004D0C11 /* Favorites.xcdatamodeld in Sources */,
 				6E5176C01487F3DC004D0C11 /* FoodItem.m in Sources */,

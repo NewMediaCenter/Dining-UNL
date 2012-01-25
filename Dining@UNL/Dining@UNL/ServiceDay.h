@@ -17,4 +17,9 @@
     
     
 }
+
+@property (nonatomic, retain) NSDate *serviceDate;
+@property (nonatomic, retain) MealService *breakfast;
+@property (nonatomic, retain) MealService *lunch;
+@property (nonatomic, retain) MealService *dinner;
 @end

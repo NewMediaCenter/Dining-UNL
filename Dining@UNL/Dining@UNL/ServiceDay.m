@@ -10,4 +10,9 @@
 
 @implementation ServiceDay
 
+@synthesize serviceDate;
+@synthesize breakfast;
+@synthesize lunch;
+@synthesize dinner;
+
 @end
