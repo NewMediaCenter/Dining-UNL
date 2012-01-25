@@ -13,15 +13,7 @@
 
 static DiningHallAPIController *sharedController;
 
-+ (void)initialize
-{
-    static BOOL initialized = NO;
-    if(!initialized)
-    {
-        initialized = YES;
-        sharedController = [[DiningHallAPIController alloc] init];
-    }
-}
+
 
 // Gets Current List of halls, and returns list as a NSMutableArray
 - (NSMutableArray *) getCurrentHalls 
@@ -56,7 +48,7 @@ static DiningHallAPIController *sharedController;
         nameElement = nil;
         
         //and load the next element
-        currentElement = [TBXML nextSiblingNamed:@"getcomplexes" searchFromElement:tbxml.rootXMLElement];        
+        currentElement = [TBXML nextSiblingNamed:@"getcomplexes" searchFromElement:currentElement];        
         
         NSLog(@"DiningHallAPI is working -- look! %@", [currentHall hallName]);
         

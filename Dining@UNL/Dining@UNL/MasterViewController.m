@@ -32,6 +32,13 @@
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
+- (NSInteger)tableView:(UITableView *)tableView 
+ numberOfRowsInSection:(NSInteger)section 
+{
+    return [hallList count];
+}
+
+
 - (UITableViewCell *)tableView:(UITableView *)theTableView 
          cellForRowAtIndexPath:(NSIndexPath *)indexPath 
 {
