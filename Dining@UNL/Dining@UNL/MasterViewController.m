@@ -66,6 +66,16 @@
     return cell;
 }
 
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath 
+{
+    Hall *theHall = [hallList objectAtIndex:indexPath.row];
+    
+    ServiceDay *foodForDay = [apiController getMealForTodaywithHall:theHall];
+    NSLog(@"Debug foodForDay: %@", foodForDay);
+    
+}
+
 - (void)viewDidUnload
 {
     [super viewDidUnload];

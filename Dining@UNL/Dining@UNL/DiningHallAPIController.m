@@ -178,7 +178,8 @@ static DiningHallAPIController *sharedController;
 - (ServiceDay *) getMealForTodaywithHall:(Hall *)theHall
 {
     NSDate *today = [NSDate date]; //init NSdate and load todays date
- 
+    return [self getMealForDay:today withHall:theHall];
+    
 }
 
 @end
