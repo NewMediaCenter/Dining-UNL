@@ -6,9 +6,10 @@
 //  Copyright (c) 2011 __MyCompanyName__. All rights reserved.
 //
 
-#import "SecondViewController.h"
+#import "MenuViewController.h"
 
-@implementation SecondViewController
+@implementation MenuViewController
+@synthesize hallMenu;
 
 - (void)didReceiveMemoryWarning
 {
@@ -20,8 +21,11 @@
 
 - (void)viewDidLoad
 {
-    [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+	[super viewDidLoad];
+    NSLog(@"Menu Side Working");
+    [menuView setDelegate:self];
+    [menuView setDataSource:self];
+
 }
 
 - (void)viewDidUnload

@@ -8,10 +8,13 @@
 
 #import "MasterViewController.h"
 #import "DiningHallAPIController.h"
+#import "MenuViewController.h"
 
 @implementation MasterViewController
 @synthesize hallList;
 @synthesize apiController;
+@synthesize menuForDay;
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -66,14 +69,26 @@
     return cell;
 }
 
+//- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath 
+//{
+//    Hall *theHall = [hallList objectAtIndex:indexPath.row];
+//   
+//    menuForDay = [apiController getMealForTodaywithHall:theHall];
+//    NSLog(@"Debug foodForDay: %@", [menuForDay description]);
+//    
+//}
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([[segue identifier] isEqualToString:@"showMenuForHall"]) {
+        MenuViewController *detailViewController = [segue destinationViewController];
+        
+       
+        
+        Hall *theHall = [hallList objectAtIndex:[self->tableView indexPathForSelectedRow].row];
+        menuForDay = [apiController getMealForTodaywithHall:theHall];
+        detailViewController.hallMenu = menuForDay;
+        
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath 
-{
-    Hall *theHall = [hallList objectAtIndex:indexPath.row];
-    
-    ServiceDay *foodForDay = [apiController getMealForTodaywithHall:theHall];
-    NSLog(@"Debug foodForDay: %@", [foodForDay description]);
-    
+    }
 }
 
 - (void)viewDidUnload

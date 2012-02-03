@@ -14,8 +14,9 @@
     IBOutlet UITableView *tableView;
     NSMutableArray *hallList;
     DiningHallAPIController *apiController;
+    ServiceDay *menuForDay;
 }
-
+@property (nonatomic, retain) ServiceDay *menuForDay;
 @property (nonatomic, retain) NSMutableArray *hallList;
 @property (nonatomic, retain) DiningHallAPIController *apiController;
 
