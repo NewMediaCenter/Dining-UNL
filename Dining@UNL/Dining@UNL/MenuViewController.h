@@ -8,14 +8,17 @@
 
 #import <UIKit/UIKit.h>
 #import "ServiceDay.h"
+#import "FoodSection.h"
+#import "FoodItem.h"
+
 
 @interface MenuViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 {
     ServiceDay *hallMenu;
     IBOutlet UITableView *menuView;
+    NSString *currentService;
 }
 
-
+@property (nonatomic, retain) NSString *currentService;
 @property (nonatomic, retain) ServiceDay *hallMenu;
-
 @end

@@ -47,13 +47,13 @@
 {
     // Check for a reusable cell first, use that if it exists
     UITableViewCell *cell =
-    [theTableView dequeueReusableCellWithIdentifier:@"UITableViewCell"];
+    [theTableView dequeueReusableCellWithIdentifier:@"HallCell"];
     
     // If there is no reusable cell of this type, create a new one
     if (!cell) {
         cell = [[UITableViewCell alloc]
                 initWithStyle:UITableViewCellStyleSubtitle
-                reuseIdentifier:@"UITableViewCell"];
+                reuseIdentifier:@"HallCell"];
     }
     
     // Set the text on the cell with the description of the possession
@@ -81,11 +81,11 @@
     if ([[segue identifier] isEqualToString:@"showMenuForHall"]) {
         MenuViewController *detailViewController = [segue destinationViewController];
         
-       
+      //  NSLog(@"THIS CODE WAS EXECUTED!!!");
         
         Hall *theHall = [hallList objectAtIndex:[self->tableView indexPathForSelectedRow].row];
         menuForDay = [apiController getMealForTodaywithHall:theHall];
-        detailViewController.hallMenu = menuForDay;
+        [detailViewController setHallMenu:menuForDay];
         
 
     }

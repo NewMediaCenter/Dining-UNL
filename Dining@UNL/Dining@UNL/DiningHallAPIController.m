@@ -62,10 +62,9 @@
 -(ServiceDay *) getMealForDay:(NSDate *)day withHall:(Hall *)theHall
 {
     NSDateFormatter *df = [[NSDateFormatter alloc] init];
-    [df setDateFormat:@"MM-DD-YYYY"];
-    NSString *uriString =  [NSString stringWithFormat: @"http://histestiis.unl.edu/menus/services/dailymenu.aspx?action=getdailymenuforentireday&complexname=%@&mealdate=12-02-2011&Type=hierarchical", 
-                            [[theHall hallName] lowercaseString]];
-    //[df stringFromDate:day]];
+    [df setDateFormat:@"MM-dd-yyyy"];
+    NSString *uriString =  [NSString stringWithFormat: @"http://histestiis.unl.edu/menus/services/dailymenu.aspx?action=getdailymenuforentireday&complexname=%@&mealdate=%@&Type=hierarchical", 
+                            [[theHall hallName] lowercaseString], [df stringFromDate:day]];
     TBXML * tbxml = [TBXML tbxmlWithURL:[NSURL URLWithString:uriString]];
     NSLog(@"URI: %@",uriString);
     ServiceDay *resultDay = [[ServiceDay alloc] init];
@@ -74,7 +73,7 @@
     // Lets get the date real quick...
     TBXMLElement *serviceDate = [TBXML childElementNamed:@"ServiceDate" parentElement:tbxml.rootXMLElement];
     
-    [df setDateFormat:@"mm/dd/yyyy"];
+    [df setDateFormat:@"MM/dd/yyyy"];
     [resultDay setServiceDate:[df dateFromString: [TBXML textForElement:serviceDate]]];
     
     
