@@ -72,7 +72,7 @@
     Hall *theHall = [hallList objectAtIndex:indexPath.row];
     
     ServiceDay *foodForDay = [apiController getMealForTodaywithHall:theHall];
-    NSLog(@"Debug foodForDay: %@", foodForDay);
+    NSLog(@"Debug foodForDay: %@", [foodForDay description]);
     
 }
 

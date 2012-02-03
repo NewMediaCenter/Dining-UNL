@@ -10,6 +10,20 @@
 
 @implementation ServiceDay
 
+-(NSString *)description
+{
+    NSMutableString *result = [[NSMutableString alloc] initWithString:@" ==SERVICE DAY START == \n"];
+    [result appendString:(@"SERVICE DATE: %@ \n", [serviceDate description])];
+    [result appendString:(@"-BREAKFAST START-: \n %@ \n -END BREAKFAST- \n",
+                          [breakfast description])];
+    [result appendString:(@"-LUNCH START-: \n %@ \n -END LUNCH- \n",
+                          [lunch description])];
+    [result appendString:(@"-DINNER START-: \n %@ \n -END DINNER- \n",
+                          [dinner description])];
+    [result appendString:(@" == HALL END == \n")]; 
+    return [NSString stringWithString:result];
+    
+}
 @synthesize serviceDate;
 @synthesize breakfast;
 @synthesize lunch;

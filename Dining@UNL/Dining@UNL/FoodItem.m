@@ -9,6 +9,12 @@
 #import "FoodItem.h"
 
 @implementation FoodItem
+
+-(NSString *)description
+{
+    return [NSString stringWithString:(@"FoodItem: %@ | %@ /n", itemID , itemName)];
+    
+}
 @synthesize itemID;
 @synthesize itemName;
 

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		43E99B7514DBF51500EEF6D9 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43E99B7414DBF51500EEF6D9 /* DetailViewController.m */; };
 		6E13FB411471B59100871973 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E13FB401471B59100871973 /* UIKit.framework */; };
 		6E13FB431471B59100871973 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E13FB421471B59100871973 /* Foundation.framework */; };
 		6E13FB451471B59100871973 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E13FB441471B59100871973 /* CoreGraphics.framework */; };
@@ -50,6 +51,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		43E99B7314DBF51500EEF6D9 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		43E99B7414DBF51500EEF6D9 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		6E13FB3C1471B59100871973 /* Dining@UNL.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Dining@UNL.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E13FB401471B59100871973 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		6E13FB421471B59100871973 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -61,7 +64,7 @@
 		6E13FB4F1471B59100871973 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		6E13FB501471B59100871973 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		6E13FB531471B59100871973 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		6E13FB551471B59100871973 /* MasterViewController.h */ = {isa = PBXFileReference; path = MasterViewController.h; sourceTree = "<group>"; };
+		6E13FB551471B59100871973 /* MasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
 		6E13FB561471B59100871973 /* MasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
 		6E13FB581471B59100871973 /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = first.png; sourceTree = "<group>"; };
 		6E13FB5A1471B59100871973 /* first@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "first@2x.png"; sourceTree = "<group>"; };
@@ -164,6 +167,8 @@
 				6E13FB4F1471B59100871973 /* AppDelegate.h */,
 				6E13FB501471B59100871973 /* AppDelegate.m */,
 				6E13FB521471B59100871973 /* MainStoryboard.storyboard */,
+				43E99B7314DBF51500EEF6D9 /* DetailViewController.h */,
+				43E99B7414DBF51500EEF6D9 /* DetailViewController.m */,
 				6E13FB551471B59100871973 /* MasterViewController.h */,
 				6E13FB561471B59100871973 /* MasterViewController.m */,
 				6E13FB581471B59100871973 /* first.png */,
@@ -354,6 +359,7 @@
 				6E20477314B399E0008A165F /* DiningHallAPIController.m in Sources */,
 				6E594FD614BF7B08007EB571 /* NSDataAdditions.m in Sources */,
 				6E594FD714BF7B08007EB571 /* TBXML.m in Sources */,
+				43E99B7514DBF51500EEF6D9 /* DetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

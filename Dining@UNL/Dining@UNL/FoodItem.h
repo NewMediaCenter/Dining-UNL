@@ -13,7 +13,7 @@
     int itemID;
     NSString *itemName;
 }
-
+-(NSString *)description;
 @property (nonatomic, retain) NSString* itemName;
 @property (nonatomic, readwrite) int itemID;
 

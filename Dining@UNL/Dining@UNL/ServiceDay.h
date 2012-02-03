@@ -17,6 +17,7 @@
     
     
 }
+-(NSString *)description ;
 
 @property (nonatomic, retain) NSDate *serviceDate;
 @property (nonatomic, retain) MealService *breakfast;

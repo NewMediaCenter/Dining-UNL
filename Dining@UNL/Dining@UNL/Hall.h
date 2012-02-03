@@ -17,7 +17,7 @@
     
     
 }
-
+-(NSString *)description;
 @property (nonatomic, retain) NSString *hallName;
 @property (nonatomic, retain) CLLocation *hallCoord;
 @property (nonatomic, retain) NSMutableArray *days;
