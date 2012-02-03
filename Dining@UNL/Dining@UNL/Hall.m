@@ -10,15 +10,28 @@
 
 
 @implementation Hall
+
+-(id)init
+{
+    if (self = [super init])
+    {
+        days = [[NSMutableArray alloc] init];
+        [hallCoord init];
+        
+        
+        
+    }
+    return self;
+}
 -(NSString *)description
 {
     NSMutableString *result = [[NSMutableString alloc] initWithString:@" == HALL START == \n"];
-    [result appendString:(@"HALL NAME: %@ \n", [hallName description])];
-    [result appendString:(@"HALL ID: %@ \n\n", [NSString stringWithFormat:@"%d", hallID])];
-    [result appendString:(@"HALL COORD: %@ \n\n", [hallCoord description])];
-    [result appendString:(@"-DAYS ARRAY START-: \n %@ \n -DAYS SECTION ARRAY- \n",
+    [result appendFormat:(@"HALL NAME: %@ \n", [hallName description])];
+    [result appendFormat:(@"HALL ID: %@ \n\n", [NSString stringWithFormat:@"%d", hallID])];
+    [result appendFormat:(@"HALL COORD: %@ \n\n", [hallCoord description])];
+    [result appendFormat:(@"-DAYS ARRAY START-: \n %@ \n -DAYS SECTION ARRAY- \n",
                           [days description])];
-    [result appendString:(@" == HALL END == \n")]; 
+    [result appendFormat:(@" == HALL END == \n")]; 
     return result;
     
 }

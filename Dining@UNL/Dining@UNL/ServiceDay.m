@@ -9,18 +9,32 @@
 #import "ServiceDay.h"
 
 @implementation ServiceDay
+-(id)init
+{
+    if (self = [super init])
+    {
+        
+        breakfast = [[MealService alloc] init];
+        lunch = [[MealService alloc] init];
+        dinner = [[MealService alloc] init];
+        
+        
+    }
+    return self;
+}
+
 
 -(NSString *)description
 {
     NSMutableString *result = [[NSMutableString alloc] initWithString:@" ==SERVICE DAY START == \n"];
-    [result appendString:(@"SERVICE DATE: %@ \n", [serviceDate description])];
-    [result appendString:(@"-BREAKFAST START-: \n %@ \n -END BREAKFAST- \n",
+    [result appendFormat:(@"SERVICE DATE: %@ \n", [serviceDate description])];
+    [result appendFormat:(@"-BREAKFAST START-: \n %@ \n -END BREAKFAST- \n",
                           [breakfast description])];
-    [result appendString:(@"-LUNCH START-: \n %@ \n -END LUNCH- \n",
+    [result appendFormat:(@"-LUNCH START-: \n %@ \n -END LUNCH- \n",
                           [lunch description])];
-    [result appendString:(@"-DINNER START-: \n %@ \n -END DINNER- \n",
+    [result appendFormat:(@"-DINNER START-: \n %@ \n -END DINNER- \n",
                           [dinner description])];
-    [result appendString:(@" == HALL END == \n")]; 
+    [result appendFormat:(@" == HALL END == \n")]; 
     return [NSString stringWithString:result];
     
 }

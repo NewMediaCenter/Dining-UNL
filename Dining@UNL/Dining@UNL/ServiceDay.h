@@ -17,6 +17,7 @@
     
     
 }
+-(id)init;
 -(NSString *)description ;
 
 @property (nonatomic, retain) NSDate *serviceDate;

@@ -14,7 +14,7 @@
     NSDate *serviceEndTime;
     NSMutableArray *sectionArray;
 }
-
+-(id)init;
 - (NSString *)description;
 @property (nonatomic, retain) NSDate *serviceStartTime;
 @property (nonatomic, retain) NSDate *serviceEndTime;

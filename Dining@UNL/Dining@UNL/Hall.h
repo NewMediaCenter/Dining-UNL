@@ -17,6 +17,7 @@
     
     
 }
+-(id)init;
 -(NSString *)description;
 @property (nonatomic, retain) NSString *hallName;
 @property (nonatomic, retain) CLLocation *hallCoord;

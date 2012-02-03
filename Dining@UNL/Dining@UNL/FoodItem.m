@@ -12,7 +12,7 @@
 
 -(NSString *)description
 {
-    return [NSString stringWithString:(@"FoodItem: %@ | %@ /n", itemID , itemName)];
+    return [NSString stringWithFormat:(@"FoodItem: %@ | %@ /n", itemID , itemName)];
     
 }
 @synthesize itemID;
