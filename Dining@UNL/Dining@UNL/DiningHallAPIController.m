@@ -32,7 +32,7 @@
         // and the strings...
         int hallID = [[TBXML textForElement:idElement] intValue];
         NSString *hallName = [TBXML textForElement:nameElement];
-        
+        hallName = [hallName stringByReplacingOccurrencesOfString:@"&amp;" withString:@"&"]; // lets get rid of HTML...
         //now, lets populate our hall object...
         Hall *currentHall = [[Hall alloc] init];
         [currentHall setHallName:hallName];
@@ -63,8 +63,8 @@
 {
     NSDateFormatter *df = [[NSDateFormatter alloc] init];
     [df setDateFormat:@"MM-dd-yyyy"];
-    NSString *uriString =  [NSString stringWithFormat: @"http://histestiis.unl.edu/menus/services/dailymenu.aspx?action=getdailymenuforentireday&complexname=%@&mealdate=%@&Type=hierarchical", 
-                            [[theHall hallName] lowercaseString], [df stringFromDate:day]];
+    NSString *uriString =  [NSString stringWithFormat: @"http://histestiis.unl.edu/menus/services/dailymenu.aspx?action=getdailymenuforentireday&complexId=%u&mealdate=%@&Type=hierarchical", 
+                            theHall.hallID, [df stringFromDate:day]];
     TBXML * tbxml = [TBXML tbxmlWithURL:[NSURL URLWithString:uriString]];
     NSLog(@"URI: %@",uriString);
     ServiceDay *resultDay = [[ServiceDay alloc] init];

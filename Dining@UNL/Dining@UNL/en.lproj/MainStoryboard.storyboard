@@ -9,7 +9,7 @@
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iF3-4o-Qjq" sceneMemberID="firstResponder"/>
                 <navigationController id="ten-fQ-k6L" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="iWj-7M-QDM"/>
+                    <tabBarItem key="tabBarItem" title="Dining Menu" image="125-food.png" id="iWj-7M-QDM"/>
                     <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="rQZ-ra-wkO">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -20,10 +20,39 @@
             </objects>
             <point key="canvasLocation" x="-1" y="64"/>
         </scene>
+        <scene sceneID="5Wa-GC-jQj">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Z0t-DX-EHM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="gZy-Nd-0NC" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="iYY-Q2-zB6">
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Root View Controller" id="gxa-aU-M90"/>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="550" y="787"/>
+        </scene>
+        <scene sceneID="xRu-qr-gn6">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cy7-TX-HQU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController definesPresentationContext="YES" id="IxG-L3-tti" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Favorites" image="29-heart.png" id="2Ex-8h-x9n"/>
+                    <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="gCz-Kg-LQU">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="gZy-Nd-0NC" kind="relationship" relationship="rootViewController" id="VlM-o1-YVO"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="16" y="787"/>
+        </scene>
         <scene sceneID="Fdo-od-8Yx">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Um2-nb-obl" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tabBarController definesPresentationContext="YES" id="han-7F-jca" sceneMemberID="viewController">
+                <tabBarController title="Menu For Date..." definesPresentationContext="YES" id="han-7F-jca" sceneMemberID="viewController">
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="V7q-Cg-Tq8">
                         <rect key="frame" x="129" y="330" width="163" height="49"/>
@@ -32,10 +61,11 @@
                     </tabBar>
                     <connections>
                         <segue destination="ten-fQ-k6L" kind="relationship" relationship="viewControllers" id="p1K-c2-UwA"/>
+                        <segue destination="IxG-L3-tti" kind="relationship" relationship="viewControllers" id="kfM-Bz-A7X"/>
                     </connections>
                 </tabBarController>
             </objects>
-            <point key="canvasLocation" x="-975" y="88"/>
+            <point key="canvasLocation" x="-963" y="80"/>
         </scene>
         <scene sceneID="9Nv-7r-bwf">
             <objects>
@@ -76,7 +106,13 @@
                             <outlet property="delegate" destination="Fgn-IZ-IGx" id="dVz-aZ-2cW"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Hall List" id="xsH-ur-0oW"/>
+                    <navigationItem key="navigationItem" id="xsH-ur-0oW">
+                        <barButtonItem key="rightBarButtonItem" title="Day..." id="PhE-3n-CK5">
+                            <connections>
+                                <action selector="toggleCalendar" destination="Fgn-IZ-IGx" id="cds-cw-YVc"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="9Mz-pr-1Ut" id="zn7-vn-8wc"/>
                     </connections>
@@ -96,9 +132,21 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="367"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <segmentedControl key="tableHeaderView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="1" id="zaV-1b-hAP">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="30"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <segments>
+                                        <segment title="Breakfast"/>
+                                        <segment title="Lunch"/>
+                                        <segment title="Dinner"/>
+                                    </segments>
+                                    <connections>
+                                        <action selector="serviceSelectorDidChange" destination="FZr-am-Y25" eventType="valueChanged" id="XnG-re-Rct"/>
+                                    </connections>
+                                </segmentedControl>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MenuCell" textLabel="ZEC-3o-heB" style="IBUITableViewCellStyleDefault" id="z0g-Fl-5wh">
-                                        <rect key="frame" x="0.0" y="46" width="320" height="46"/>
+                                        <rect key="frame" x="0.0" y="66" width="320" height="46"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="1" width="300" height="43"/>
@@ -131,26 +179,17 @@
                     </navigationItem>
                     <connections>
                         <outlet property="menuView" destination="cnB-ye-9V2" id="sZv-OI-da8"/>
+                        <outlet property="serviceChooser" destination="zaV-1b-hAP" id="wWU-vb-7dM"/>
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="1021" y="54"/>
+            <point key="canvasLocation" x="1023" y="64"/>
         </scene>
     </scenes>
-    <classes>
-        <class className="MasterViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MasterViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="MenuViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MenuViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="menuView" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-    </classes>
+    <resources>
+        <image name="125-food.png" width="29" height="23"/>
+        <image name="29-heart.png" width="24" height="21"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

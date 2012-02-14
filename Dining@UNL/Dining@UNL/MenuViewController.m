@@ -11,6 +11,8 @@
 @implementation MenuViewController
 @synthesize hallMenu;
 @synthesize currentService;
+@synthesize serviceChooser;
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -28,17 +30,20 @@
     [menuView setDataSource:self];
     currentService = @"Lunch";
     
+    serviceSelector = NSSelectorFromString([currentService lowercaseString]);
+    
+    
 }
 
 - (NSInteger) numberOfSectionsInTableView:(UITableView *)tableView{
-    return [hallMenu.lunch.sectionArray count];
+    return [[[hallMenu performSelector:serviceSelector] sectionArray] count];
 }
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
-    FoodSection *currentSection = [hallMenu.lunch.sectionArray objectAtIndex:section];
+    FoodSection *currentSection = [[[hallMenu performSelector:serviceSelector] sectionArray] objectAtIndex:section];
     return [currentSection foodSectionName];
 }
 - (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    FoodSection *currentSection = [hallMenu.lunch.sectionArray objectAtIndex:section];
+    FoodSection *currentSection = [[[hallMenu performSelector:serviceSelector] sectionArray] objectAtIndex:section];
     return [[currentSection foodItems] count];
 }
 
@@ -59,7 +64,7 @@
     // Set the text on the cell with the description of the possession
     // that is at the nth index of possessions, where n = row this cell
     // will appear in on the tableview
-    FoodSection *s = [hallMenu.lunch.sectionArray objectAtIndex:[indexPath section]] ;
+    FoodSection *s = [[[hallMenu performSelector:serviceSelector] sectionArray] objectAtIndex:[indexPath section]] ;
     FoodItem *f = [[s foodItems] objectAtIndex:[indexPath row]];
     
     [[cell textLabel] setText:[f itemName]];
@@ -67,6 +72,24 @@
     
     
     return cell;
+}
+
+- (IBAction) serviceSelectorDidChange {
+    switch (self.serviceChooser.selectedSegmentIndex) {
+        case 0:
+            currentService = @"Breakfast";
+            break;
+        case 1:
+            currentService = @"Lunch";
+            break;
+        case 2:
+            currentService = @"Dinner";
+            break;
+    }
+    serviceSelector = NSSelectorFromString([currentService lowercaseString]);
+    [self setTitle: currentService];
+    NSLog(@"Current Service is Now: %@", currentService);
+    [menuView reloadData];
 }
 
 - (void)viewDidUnload

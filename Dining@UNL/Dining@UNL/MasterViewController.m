@@ -10,11 +10,17 @@
 #import "DiningHallAPIController.h"
 #import "MenuViewController.h"
 
+static int calendarShadowOffset = (int)-20;
+
+
 @implementation MasterViewController
+
 @synthesize hallList;
 @synthesize apiController;
 @synthesize menuForDay;
-
+@synthesize tableView;
+@synthesize calendar;
+@synthesize menuDate;
 
 - (void)didReceiveMemoryWarning
 {
@@ -24,6 +30,7 @@
 
 #pragma mark - View lifecycle
 
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -31,8 +38,20 @@
     [tableView setDelegate:self];
     [tableView setDataSource:self];
     apiController = [[DiningHallAPIController alloc] init];
+    menuDate =  [[NSDate alloc] init]; //init NSdate and load todays date
     hallList = [[NSMutableArray alloc] initWithArray:[apiController getCurrentHalls]];
-	// Do any additional setup after loading the view, typically from a nib.
+    // lets make a calandar!
+    calendar = 	[[TKCalendarMonthView alloc] init];
+    calendar.delegate = self;
+    calendar.dataSource = self;
+    
+    // Add Calendar to just off the top of the screen so it can later slide down
+    calendar.frame = CGRectMake(0, -calendar.frame.size.height+calendarShadowOffset, calendar.frame.size.width, calendar.frame.size.height);
+	// Ensure this is the last "addSubview" because the calendar must be the top most view layer	
+	[self.view addSubview:self.calendar];
+	[calendar reload];
+    [self setTitle: [NSString stringWithFormat:@"%@", menuDate]];
+    
 }
 
 - (NSInteger)tableView:(UITableView *)tableView 
@@ -40,6 +59,7 @@
 {
     return [hallList count];
 }
+
 
 
 - (UITableViewCell *)tableView:(UITableView *)theTableView 
@@ -84,12 +104,14 @@
       //  NSLog(@"THIS CODE WAS EXECUTED!!!");
         
         Hall *theHall = [hallList objectAtIndex:[self->tableView indexPathForSelectedRow].row];
-        menuForDay = [apiController getMealForTodaywithHall:theHall];
+        menuForDay = [apiController getMealForDay:menuDate withHall:theHall];
         [detailViewController setHallMenu:menuForDay];
         
 
     }
 }
+
+
 
 - (void)viewDidUnload
 {
@@ -100,6 +122,7 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
+    [tableView deselectRowAtIndexPath:[tableView indexPathForSelectedRow] animated:YES];
     [super viewWillAppear:animated];
 }
 
@@ -122,6 +145,66 @@
 {
     // Return YES for supported orientations
     return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
+}
+
+
+#pragma mark TK Cal Begin
+- (IBAction)toggleCalendar {
+    NSLog(@"CAL TOGGLE");
+	// If calendar is off the screen, show it, else hide it (both with animations)
+	if (calendar.frame.origin.y == -calendar.frame.size.height+calendarShadowOffset) {
+		// Show
+		[UIView beginAnimations:nil context:NULL];
+		[UIView setAnimationDuration:.75];
+		calendar.frame = CGRectMake(0, 0, calendar.frame.size.width, calendar.frame.size.height);
+		[UIView commitAnimations];
+	} else {
+		// Hide
+		[UIView beginAnimations:nil context:NULL];
+		[UIView setAnimationDuration:.75];
+		calendar.frame = CGRectMake(0, -calendar.frame.size.height+calendarShadowOffset, calendar.frame.size.width, calendar.frame.size.height);		
+		[UIView commitAnimations];
+	}	
+}
+
+#pragma mark -
+#pragma mark TKCalendarMonthViewDelegate methods
+
+- (void)calendarMonthView:(TKCalendarMonthView *)monthView didSelectDate:(NSDate *)d {
+	NSCalendar *cal = [[NSCalendar alloc] init];
+    NSDateComponents *components = [cal components:0 fromDate:d];
+    // this is a weird bug workaround. Needs to be found and fixed.
+    int day = [components day];
+    int month = [components year];
+    int year = [components month];
+    year += 2000;
+    
+    NSDateFormatter *tempFormatter = [[[NSDateFormatter alloc]init]autorelease];
+    [tempFormatter setDateFormat:@"yyyy-MM-dd hh:mm:ss"];
+    NSString* message = [NSString stringWithFormat:@"%04d-%02d-%02d %02d:%02d:%02d", year, month, day, 0, 0, 0];
+    menuDate = [tempFormatter dateFromString:message];
+    
+    NSLog(@"Date Selected: %@", d);
+    //menuDate = d;
+    NSLog(@"Menu Date Now: %@", menuDate);
+    [self toggleCalendar];
+    
+}
+
+- (void)calendarMonthView:(TKCalendarMonthView *)monthView monthDidChange:(NSDate *)d {
+	NSLog(@"calendarMonthView monthDidChange");	
+}
+
+#pragma mark -
+#pragma mark TKCalendarMonthViewDataSource methods
+
+- (NSArray*)calendarMonthView:(TKCalendarMonthView *)monthView marksFromDate:(NSDate *)startDate toDate:(NSDate *)lastDate {	
+	NSLog(@"calendarMonthView marksFromDate toDate");	
+	NSLog(@"Make sure to update 'data' variable to pull from CoreData, website, User Defaults, or some other source.");
+
+	
+	
+	return nil;
 }
 
 @end

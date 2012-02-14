@@ -17,8 +17,16 @@
     ServiceDay *hallMenu;
     IBOutlet UITableView *menuView;
     NSString *currentService;
+    IBOutlet UISegmentedControl *serviceChooser;
+    SEL serviceSelector;
+
 }
 
+-(IBAction) serviceSelectorDidChange;
+
 @property (nonatomic, retain) NSString *currentService;
+@property (nonatomic, retain) IBOutlet UISegmentedControl *serviceChooser;
 @property (nonatomic, retain) ServiceDay *hallMenu;
+
+
 @end
