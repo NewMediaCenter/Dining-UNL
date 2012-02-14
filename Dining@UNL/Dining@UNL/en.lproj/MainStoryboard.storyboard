@@ -107,6 +107,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="xsH-ur-0oW">
+                        <nil key="title"/>
                         <barButtonItem key="rightBarButtonItem" title="Day..." id="PhE-3n-CK5">
                             <connections>
                                 <action selector="toggleCalendar" destination="Fgn-IZ-IGx" id="cds-cw-YVc"/>
