@@ -61,6 +61,7 @@
 
 -(ServiceDay *) getMealForDay:(NSDate *)day withHall:(Hall *)theHall
 {
+    NSLog(@"Day to be gotten: %@", day);
     NSDateFormatter *df = [[NSDateFormatter alloc] init];
     [df setDateFormat:@"MM-dd-yyyy"];
     NSString *uriString =  [NSString stringWithFormat: @"http://histestiis.unl.edu/menus/services/dailymenu.aspx?action=getdailymenuforentireday&complexId=%u&mealdate=%@&Type=hierarchical", 

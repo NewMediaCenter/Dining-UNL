@@ -172,11 +172,11 @@ static int calendarShadowOffset = (int)-20;
 
 - (void)calendarMonthView:(TKCalendarMonthView *)monthView didSelectDate:(NSDate *)d {
 	    NSLog(@"Date Selected: %@", d);
-    menuDate = d;
+    [self setMenuDate:d];
     NSLog(@"Menu Date Now: %@", menuDate);
     [NSDateFormatter setDefaultFormatterBehavior:NSDateFormatterBehavior10_4];
 	NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-		[dateFormatter setDateFormat:@"MM-DD"];
+		[dateFormatter setDateFormat:@"MM-dd"];
     NSString *titleString = [[NSString alloc ] initWithFormat:@"Menu For %@", [dateFormatter stringFromDate:d]];
     [self setTitle: titleString];
     [self toggleCalendar];
