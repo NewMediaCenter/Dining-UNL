@@ -50,7 +50,7 @@ static int calendarShadowOffset = (int)-20;
 	// Ensure this is the last "addSubview" because the calendar must be the top most view layer	
 	[self.view addSubview:self.calendar];
 	[calendar reload];
-    [self setTitle: [NSString stringWithFormat:@"%@", menuDate]];
+    [self setTitle: @"Menu For Today"];
     
 }
 
@@ -171,25 +171,18 @@ static int calendarShadowOffset = (int)-20;
 #pragma mark TKCalendarMonthViewDelegate methods
 
 - (void)calendarMonthView:(TKCalendarMonthView *)monthView didSelectDate:(NSDate *)d {
-	NSCalendar *cal = [[NSCalendar alloc] init];
-    NSDateComponents *components = [cal components:0 fromDate:d];
-    // this is a weird bug workaround. Needs to be found and fixed.
-    int day = [components day];
-    int month = [components year];
-    int year = [components month];
-    year += 2000;
-    
-    NSDateFormatter *tempFormatter = [[[NSDateFormatter alloc]init]autorelease];
-    [tempFormatter setDateFormat:@"yyyy-MM-dd hh:mm:ss"];
-    NSString* message = [NSString stringWithFormat:@"%04d-%02d-%02d %02d:%02d:%02d", year, month, day, 0, 0, 0];
-    menuDate = [tempFormatter dateFromString:message];
-    
-    NSLog(@"Date Selected: %@", d);
-    //menuDate = d;
+	    NSLog(@"Date Selected: %@", d);
+    menuDate = d;
     NSLog(@"Menu Date Now: %@", menuDate);
+    [NSDateFormatter setDefaultFormatterBehavior:NSDateFormatterBehavior10_4];
+	NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+		[dateFormatter setDateFormat:@"MM-DD"];
+    NSString *titleString = [[NSString alloc ] initWithFormat:@"Menu For %@", [dateFormatter stringFromDate:d]];
+    [self setTitle: titleString];
     [self toggleCalendar];
     
-}
+               }
+               
 
 - (void)calendarMonthView:(TKCalendarMonthView *)monthView monthDidChange:(NSDate *)d {
 	NSLog(@"calendarMonthView monthDidChange");	
