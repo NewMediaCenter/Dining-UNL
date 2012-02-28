@@ -39,4 +39,6 @@
 @synthesize hallCoord;
 @synthesize hallName;
 @synthesize hallID;
+@synthesize distanceFromCurrentLocation;
+
 @end

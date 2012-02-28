@@ -14,7 +14,7 @@
     CLLocation *hallCoord;
     NSMutableArray *days;
     int hallID;
-    
+    int distanceFromCurrentLocation;
     
 }
 -(id)init;
@@ -23,5 +23,6 @@
 @property (nonatomic, retain) CLLocation *hallCoord;
 @property (nonatomic, retain) NSMutableArray *days;
 @property (readwrite, assign) int hallID;
+@property (readwrite, assign) int distanceFromCurrentLocation;
 
 @end

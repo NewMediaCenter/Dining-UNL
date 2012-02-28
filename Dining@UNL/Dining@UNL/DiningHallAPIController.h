@@ -26,7 +26,7 @@
 - (ServiceDay *) getMealForTodaywithHall:(Hall *)theHall;
 
 - (NSMutableArray *) checkFavorites:(NSMutableArray *)favoritesList;
-
+- (NSMutableArray *) getAvailableDates;
 
 
 

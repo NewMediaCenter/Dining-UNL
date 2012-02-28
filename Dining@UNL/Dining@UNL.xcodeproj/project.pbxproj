@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		43E3F3AC14DC756600876DEA /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 43E3F3AB14DC756600876DEA /* Default@2x.png */; };
 		43E3F3AF14DC76BD00876DEA /* dining-unl.png in Resources */ = {isa = PBXBuildFile; fileRef = 43E3F3AE14DC76BD00876DEA /* dining-unl.png */; };
+		6E00362A14EA695100EB4D56 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E00362914EA695100EB4D56 /* Default@2x.png */; };
 		6E13FB411471B59100871973 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E13FB401471B59100871973 /* UIKit.framework */; };
 		6E13FB431471B59100871973 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E13FB421471B59100871973 /* Foundation.framework */; };
 		6E13FB451471B59100871973 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E13FB441471B59100871973 /* CoreGraphics.framework */; };
@@ -90,6 +90,7 @@
 		6EA1495314EA43B10036245B /* UIView+TKCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EA1492214EA43B10036245B /* UIView+TKCategory.m */; };
 		6EA1495414EA43B10036245B /* UIViewController+TKCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EA1492414EA43B10036245B /* UIViewController+TKCategory.m */; };
 		6EDBED5514E9DEF7006D6A6A /* 29-heart.png in Resources */ = {isa = PBXBuildFile; fileRef = 6EDBED5414E9DEF7006D6A6A /* 29-heart.png */; };
+		6EEEAFF214FC38A70053B2B4 /* MasterViewController in Resources */ = {isa = PBXBuildFile; fileRef = 6EEEAFF114FC38A70053B2B4 /* MasterViewController */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -117,8 +118,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		43E3F3AB14DC756600876DEA /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		43E3F3AE14DC76BD00876DEA /* dining-unl.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dining-unl.png"; sourceTree = "<group>"; };
+		6E00362914EA695100EB4D56 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		6E13FB3C1471B59100871973 /* Dining@UNL.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Dining@UNL.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E13FB401471B59100871973 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		6E13FB421471B59100871973 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -263,6 +264,7 @@
 		6EA1492314EA43B10036245B /* UIViewController+TKCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+TKCategory.h"; sourceTree = "<group>"; };
 		6EA1492414EA43B10036245B /* UIViewController+TKCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+TKCategory.m"; sourceTree = "<group>"; };
 		6EDBED5414E9DEF7006D6A6A /* 29-heart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "29-heart.png"; sourceTree = "<group>"; };
+		6EEEAFF114FC38A70053B2B4 /* MasterViewController */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = MasterViewController; path = "../../../../../../../../../../../../emer-backup/MasterViewController"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -305,10 +307,10 @@
 		6E13FB311471B59000871973 = {
 			isa = PBXGroup;
 			children = (
+				6E00362914EA695100EB4D56 /* Default@2x.png */,
 				6EA148C014EA42410036245B /* QuartzCore.framework */,
 				6EA148AF14EA41FD0036245B /* TapkuLibrary.bundle */,
 				43E3F3AE14DC76BD00876DEA /* dining-unl.png */,
-				43E3F3AB14DC756600876DEA /* Default@2x.png */,
 				6E594FD814BF7C7B007EB571 /* libz.dylib */,
 				6E13FB461471B59100871973 /* Dining@UNL */,
 				6E13FB6F1471B59100871973 /* Dining@UNLTests */,
@@ -350,6 +352,7 @@
 				6E13FB521471B59100871973 /* MainStoryboard.storyboard */,
 				6E13FB551471B59100871973 /* MasterViewController.h */,
 				6E13FB561471B59100871973 /* MasterViewController.m */,
+				6EEEAFF114FC38A70053B2B4 /* MasterViewController */,
 				6E13FB581471B59100871973 /* first.png */,
 				6E13FB5A1471B59100871973 /* first@2x.png */,
 				6E13FB5C1471B59100871973 /* MenuViewController.h */,
@@ -617,12 +620,13 @@
 				6E13FB5B1471B59100871973 /* first@2x.png in Resources */,
 				6E13FB601471B59100871973 /* second.png in Resources */,
 				6E13FB621471B59100871973 /* second@2x.png in Resources */,
-				43E3F3AC14DC756600876DEA /* Default@2x.png in Resources */,
 				43E3F3AF14DC76BD00876DEA /* dining-unl.png in Resources */,
 				6E67C16114E9D1AC00EBBEC2 /* 83-calendar.png in Resources */,
 				6E67C16414E9D1CD00EBBEC2 /* 125-food.png in Resources */,
 				6EDBED5514E9DEF7006D6A6A /* 29-heart.png in Resources */,
 				6EA148B614EA41FD0036245B /* TapkuLibrary.bundle in Resources */,
+				6E00362A14EA695100EB4D56 /* Default@2x.png in Resources */,
+				6EEEAFF214FC38A70053B2B4 /* MasterViewController in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -796,7 +800,7 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
@@ -805,6 +809,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};

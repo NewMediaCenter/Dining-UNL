@@ -10,7 +10,7 @@
 #import "DiningHallAPIController.h"
 #import "TKCalendarMonthView.h"
 
-@interface MasterViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, TKCalendarMonthViewDelegate, TKCalendarMonthViewDataSource>
+@interface MasterViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, CLLocationManagerDelegate, TKCalendarMonthViewDelegate, TKCalendarMonthViewDataSource>
 {
     IBOutlet UITableView *tableView;
     NSMutableArray *hallList;
@@ -18,6 +18,8 @@
     ServiceDay *menuForDay;
     TKCalendarMonthView *calendar;
     NSDate *menuDate;
+    NSMutableArray *availableDateArray;
+    CLLocationManager *locationManager;
 }
 @property (nonatomic, retain) ServiceDay *menuForDay;
 @property (nonatomic, retain) IBOutlet UITableView *tableView;
@@ -25,6 +27,8 @@
 @property (nonatomic, retain) DiningHallAPIController *apiController;
 @property (nonatomic, retain) TKCalendarMonthView *calendar;
 @property (nonatomic, retain) NSDate *menuDate;
+@property (nonatomic, retain) NSMutableArray *availableDateArray;
+@property (nonatomic, retain) CLLocationManager *locationManager;
 
 - (IBAction)toggleCalendar;
 

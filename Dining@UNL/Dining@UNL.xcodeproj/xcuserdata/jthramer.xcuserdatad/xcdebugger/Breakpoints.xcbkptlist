@@ -23,11 +23,11 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "Dining@UNL/DiningHallAPIController.m"
-         timestampString = "348095212.664868"
+         timestampString = "352075610.731546"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "11"
-         endingLineNumber = "11">
+         startingLineNumber = "12"
+         endingLineNumber = "12">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
@@ -52,8 +52,8 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "15"
          endingLineNumber = "15"
-         landmarkName = "hallID"
-         landmarkType = "19">
+         landmarkName = "-init"
+         landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
@@ -66,8 +66,8 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "14"
          endingLineNumber = "14"
-         landmarkName = "hallName"
-         landmarkType = "19">
+         landmarkName = "-init"
+         landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
@@ -80,8 +80,8 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "20"
          endingLineNumber = "20"
-         landmarkName = "@interface Hall"
-         landmarkType = "2">
+         landmarkName = "-init"
+         landmarkType = "4">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
@@ -103,12 +103,12 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "Dining@UNL/DiningHallAPIController.m"
-         timestampString = "350898819.672383"
+         timestampString = "352075610.731546"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "96"
-         endingLineNumber = "96"
-         landmarkName = "-getMealForDay:withHall:"
+         startingLineNumber = "121"
+         endingLineNumber = "121"
+         landmarkName = "-getCurrentHalls"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -117,12 +117,12 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "Dining@UNL/DiningHallAPIController.m"
-         timestampString = "350898819.672383"
+         timestampString = "352075610.731546"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "132"
-         endingLineNumber = "132"
-         landmarkName = "-getMealForDay:withHall:"
+         startingLineNumber = "157"
+         endingLineNumber = "157"
+         landmarkName = "-getCurrentHalls"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -131,11 +131,11 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "Dining@UNL/MasterViewController.m"
-         timestampString = "350873105.864323"
+         timestampString = "352070213.382062"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "37"
-         endingLineNumber = "37"
+         startingLineNumber = "38"
+         endingLineNumber = "38"
          landmarkName = "-viewDidLoad"
          landmarkType = "5">
       </FileBreakpoint>
@@ -173,11 +173,11 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "Dining@UNL/MasterViewController.m"
-         timestampString = "350873175.338739"
+         timestampString = "352071893.132859"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "51"
-         endingLineNumber = "51"
+         startingLineNumber = "53"
+         endingLineNumber = "53"
          landmarkName = "-viewDidLoad"
          landmarkType = "5">
       </FileBreakpoint>
@@ -187,13 +187,13 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "Dining@UNL/MasterViewController.m"
-         timestampString = "350877320.363668"
+         timestampString = "352071893.132859"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "107"
-         endingLineNumber = "107"
-         landmarkName = "-prepareForSegue:sender:"
-         landmarkType = "5">
+         startingLineNumber = "109"
+         endingLineNumber = "109"
+         landmarkName = "@implementation MasterViewController"
+         landmarkType = "3">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
@@ -201,11 +201,11 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "Dining@UNL/MasterViewController.m"
-         timestampString = "350877261.170699"
+         timestampString = "352071893.132859"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "53"
-         endingLineNumber = "53"
+         startingLineNumber = "55"
+         endingLineNumber = "55"
          landmarkName = "-viewDidLoad"
          landmarkType = "5">
       </FileBreakpoint>
@@ -227,12 +227,12 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "Dining@UNL/MasterViewController.m"
-         timestampString = "350877638.336741"
+         timestampString = "352071893.132859"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "154"
-         endingLineNumber = "154"
-         landmarkName = "-toggleCalendar"
+         startingLineNumber = "156"
+         endingLineNumber = "156"
+         landmarkName = "-locationManager:didUpdateToLocation:fromLocation:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -255,12 +255,12 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "Dining@UNL/MasterViewController.m"
-         timestampString = "350879801.588676"
+         timestampString = "352071893.132859"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "155"
-         endingLineNumber = "155"
-         landmarkName = "-toggleCalendar"
+         startingLineNumber = "157"
+         endingLineNumber = "157"
+         landmarkName = "-locationManager:didUpdateToLocation:fromLocation:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -339,12 +339,12 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "Dining@UNL/DiningHallAPIController.m"
-         timestampString = "350898819.672383"
+         timestampString = "352075610.731546"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "67"
-         endingLineNumber = "67"
-         landmarkName = "-getMealForDay:withHall:"
+         startingLineNumber = "76"
+         endingLineNumber = "76"
+         landmarkName = "-getCurrentHalls"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -353,12 +353,130 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "Dining@UNL/MasterViewController.m"
-         timestampString = "350902039.809219"
+         timestampString = "352071893.132859"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "183"
-         endingLineNumber = "183"
-         landmarkName = "-calendarMonthView:didSelectDate:"
+         startingLineNumber = "185"
+         endingLineNumber = "185"
+         landmarkName = "-locationManager:didUpdateToLocation:fromLocation:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         isPathRelative = "1"
+         filePath = "Dining@UNL/DiningHallAPIController.m"
+         timestampString = "352075610.731546"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "100"
+         endingLineNumber = "100"
+         landmarkName = "-getCurrentHalls"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Dining@UNL/MasterViewController.h"
+         timestampString = "352067764.541275"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "21"
+         endingLineNumber = "21"
+         landmarkName = "@interface MasterViewController"
+         landmarkType = "2">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Dining@UNL/DiningHallAPIController.m"
+         timestampString = "352075610.731546"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "79"
+         endingLineNumber = "79"
+         landmarkName = "-getCurrentHalls"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Dining@UNL/DiningHallAPIController.m"
+         timestampString = "352075610.731546"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "71"
+         endingLineNumber = "71"
+         landmarkName = "-getCurrentHalls"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Dining@UNL/MasterViewController.m"
+         timestampString = "352074326.836273"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "238"
+         endingLineNumber = "238"
+         landmarkName = "-locationManager:didUpdateToLocation:fromLocation:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Dining@UNL/MasterViewController.m"
+         timestampString = "352074326.836273"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "200"
+         endingLineNumber = "200"
+         landmarkName = "-locationManager:didUpdateToLocation:fromLocation:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "Yes"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Dining@UNL/ServiceDay.m"
+         timestampString = "352074367.675048"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "21"
+         endingLineNumber = "21"
+         landmarkName = "-init"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "Yes"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Dining@UNL/DiningHallAPIController.m"
+         timestampString = "352075574.667226"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "51"
+         endingLineNumber = "51"
+         landmarkName = "-getCurrentHalls"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Dining@UNL/MasterViewController.m"
+         timestampString = "352075774.505744"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "154"
+         endingLineNumber = "154"
+         landmarkName = "-locationManager:didUpdateToLocation:fromLocation:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

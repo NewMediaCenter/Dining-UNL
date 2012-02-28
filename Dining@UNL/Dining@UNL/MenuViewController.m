@@ -66,8 +66,8 @@
     // will appear in on the tableview
     FoodSection *s = [[[hallMenu performSelector:serviceSelector] sectionArray] objectAtIndex:[indexPath section]] ;
     FoodItem *f = [[s foodItems] objectAtIndex:[indexPath row]];
-    
-    [[cell textLabel] setText:[f itemName]];
+   
+    [[cell textLabel] setText:[[f itemName] stringByReplacingOccurrencesOfString:@"&amp;" withString:@"&"] ];
     
     
     

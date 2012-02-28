@@ -8,6 +8,7 @@
 
 #import "DiningHallAPIController.h"
 #import "TBXML.h"
+#import <CoreLocation/CLLocation.h>
 
 @implementation DiningHallAPIController
 
@@ -38,6 +39,14 @@
         [currentHall setHallName:hallName];
         currentHall.hallID = hallID;
         
+        TBXMLElement *latitudeElement = [TBXML childElementNamed:@"Latitude" parentElement:currentElement];
+        TBXMLElement *longitudeElement = [TBXML childElementNamed:@"Longitude" parentElement:currentElement];
+        CLLocationDegrees latitude = [[TBXML textForElement:latitudeElement] doubleValue];
+        CLLocationDegrees longitude = [[TBXML textForElement:longitudeElement] doubleValue];
+        CLLocation *location = [[CLLocation alloc] initWithLatitude:latitude longitude:longitude];
+        [currentHall setHallCoord: location];
+       
+        
         //and lets add it to the array
         [hallList addObject:currentHall];
         
@@ -55,8 +64,38 @@
     }
     
     return hallList;
+}
+
+- (NSMutableArray *) getAvailableDates
+{
+    TBXML * tbxml = [TBXML tbxmlWithURL:[NSURL URLWithString:@"http://histestiis.unl.edu/menus/services/DailyMenu.aspx?action=getmealdates"]]; // Lets load the XML...
+    NSMutableArray *availableDates = [[NSMutableArray alloc] init]; // Init our array containing our halls
     
     
+    TBXMLElement *currentElement = [TBXML childElementNamed:@"getmealdates" parentElement:tbxml.rootXMLElement];
+    NSDate *date = [[NSDate alloc] init];
+    NSDateFormatter *df = [[NSDateFormatter alloc] init];
+    [df setTimeZone: [NSTimeZone timeZoneForSecondsFromGMT:0]];
+    [df setDateFormat:@"MM-dd-yyyy"];
+    
+    while (currentElement){
+        TBXMLElement *dateElement = [TBXML childElementNamed:@"MealDate" parentElement:currentElement];
+
+        
+        
+        date = [df dateFromString: [TBXML textForElement:dateElement]];
+        
+        [availableDates addObject:date];
+        
+        currentElement = [TBXML nextSiblingNamed:@"getmealdates" searchFromElement:currentElement];
+        
+        NSLog(@"Added Date: %@", date);
+        
+        
+    }
+    
+    return availableDates;
+
 }
 
 -(ServiceDay *) getMealForDay:(NSDate *)day withHall:(Hall *)theHall
@@ -66,7 +105,21 @@
     [df setDateFormat:@"MM-dd-yyyy"];
     NSString *uriString =  [NSString stringWithFormat: @"http://histestiis.unl.edu/menus/services/dailymenu.aspx?action=getdailymenuforentireday&complexId=%u&mealdate=%@&Type=hierarchical", 
                             theHall.hallID, [df stringFromDate:day]];
-    TBXML * tbxml = [TBXML tbxmlWithURL:[NSURL URLWithString:uriString]];
+    TBXML * tbxml = nil;
+    @try {
+        tbxml = [TBXML tbxmlWithURL:[NSURL URLWithString:uriString]];
+    }
+    @catch (NSException * e) {
+        NSLog(@"Exception was cought while trying to load URL. Exception is as follows: %@", e);
+        UIAlertView *message = [[UIAlertView alloc] initWithTitle:@"Something Went Wrong!"
+                                                          message:@"An Error was generated as we tried to get data from the API. This is probably due to a problem with the Database. Please make another selection or try again later."
+                                                         delegate:nil
+                                                cancelButtonTitle:@"OK"
+                                                otherButtonTitles:nil];
+        
+        [message show];
+        return nil;
+    }
     NSLog(@"URI: %@",uriString);
     ServiceDay *resultDay = [[ServiceDay alloc] init];
     TBXMLElement *currentElement = [TBXML childElementNamed:@"UNLDining" parentElement:tbxml.rootXMLElement];
