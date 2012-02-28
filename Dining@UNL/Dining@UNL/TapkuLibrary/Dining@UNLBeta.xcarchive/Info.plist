@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>ApplicationProperties</key>
+	<dict>
+		<key>ApplicationPath</key>
+		<string>Applications/Dining@UNL.app</string>
+		<key>CFBundleIdentifier</key>
+		<string>edu.unl.nmc.Dining-UNL</string>
+		<key>CFBundleShortVersionString</key>
+		<string>1.0</string>
+		<key>IconPaths</key>
+		<array>
+			<string>Applications/Dining@UNL.app/dining-unl.png</string>
+			<string>Applications/Dining@UNL.app/dining-unl.png</string>
+		</array>
+	</dict>
+	<key>ArchiveVersion</key>
+	<real>1</real>
+	<key>CreationDate</key>
+	<date>2012-02-14T09:06:38Z</date>
+	<key>Name</key>
+	<string>Dining@UNL</string>
+	<key>SchemeName</key>
+	<string>Dining@UNL</string>
+</dict>
+</plist>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>NSManagedObjectModel_CurrentVersionName</key>
+	<string>Favorites</string>
+	<key>NSManagedObjectModel_VersionHashes</key>
+	<dict>
+		<key>Favorites</key>
+		<dict>
+			<key>Favorite</key>
+			<data>
+			HyW5jDoPZYQOVGhwaVDEGY+DrNgBMH7pY/d54bD4D/Y=
+			</data>
+		</dict>
+	</dict>
+</dict>
+</plist>
