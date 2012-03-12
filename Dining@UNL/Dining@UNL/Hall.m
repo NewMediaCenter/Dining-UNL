@@ -35,6 +35,17 @@
     return result;
     
 }
+
+- (NSComparisonResult)compareDistance:(id)otherObject
+{
+    if ([self distanceFromCurrentLocation] > [otherObject distanceFromCurrentLocation]) {
+        return NSOrderedDescending;
+    } else if ([self distanceFromCurrentLocation] < [otherObject distanceFromCurrentLocation]) {
+        return NSOrderedAscending;
+    } else {
+        return NSOrderedSame;
+    }
+}
 @synthesize days;
 @synthesize hallCoord;
 @synthesize hallName;

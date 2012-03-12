@@ -13,6 +13,7 @@
 @interface MasterViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, CLLocationManagerDelegate, TKCalendarMonthViewDelegate, TKCalendarMonthViewDataSource>
 {
     IBOutlet UITableView *tableView;
+    IBOutlet UIBarButtonItem *dayButton;
     NSMutableArray *hallList;
     DiningHallAPIController *apiController;
     ServiceDay *menuForDay;
@@ -23,12 +24,14 @@
 }
 @property (nonatomic, retain) ServiceDay *menuForDay;
 @property (nonatomic, retain) IBOutlet UITableView *tableView;
+@property (nonatomic, retain) IBOutlet UIBarButtonItem *dayButton;
 @property (nonatomic, retain) NSMutableArray *hallList;
 @property (nonatomic, retain) DiningHallAPIController *apiController;
 @property (nonatomic, retain) TKCalendarMonthView *calendar;
 @property (nonatomic, retain) NSDate *menuDate;
 @property (nonatomic, retain) NSMutableArray *availableDateArray;
 @property (nonatomic, retain) CLLocationManager *locationManager;
+
 
 - (IBAction)toggleCalendar;
 

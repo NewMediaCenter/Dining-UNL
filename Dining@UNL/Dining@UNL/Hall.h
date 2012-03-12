@@ -19,6 +19,7 @@
 }
 -(id)init;
 -(NSString *)description;
+-(NSComparisonResult *)compareDistance:(id)otherObject;
 @property (nonatomic, retain) NSString *hallName;
 @property (nonatomic, retain) CLLocation *hallCoord;
 @property (nonatomic, retain) NSMutableArray *days;

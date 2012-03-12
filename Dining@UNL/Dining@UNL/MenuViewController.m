@@ -28,8 +28,32 @@
     NSLog(@"Menu Side Working");
     [menuView setDelegate:self];
     [menuView setDataSource:self];
-    currentService = @"Lunch";
     
+    //Lets start figuring out what time it is.
+    NSTimeInterval breakfastStart = [[[hallMenu breakfast] serviceStartTime] timeIntervalSinceNow];
+    NSTimeInterval breakfastEnd = [[[hallMenu breakfast] serviceEndTime] timeIntervalSinceNow];
+    NSTimeInterval lunchEnd = [[[hallMenu lunch] serviceEndTime] timeIntervalSinceNow];
+    NSTimeInterval dinnerEnd = [[[hallMenu dinner] serviceEndTime] timeIntervalSinceNow];
+    
+    
+    
+    if (breakfastEnd >=0){
+        currentService =@"Breakfast";
+        [serviceChooser setSelectedSegmentIndex:0];
+    } else if (lunchEnd >=0){
+        currentService =@"Lunch";
+        [serviceChooser setSelectedSegmentIndex:1];
+    } else if (dinnerEnd >= 0) {
+        currentService =@"Dinner";
+        [serviceChooser setSelectedSegmentIndex:2]; 
+    } else if (dinnerEnd <= 0){
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Hall Closed" message:@"This dining Hall has closed for the day. You may want to try another hall or check Tomorrow's Menu." delegate:self cancelButtonTitle:@"Okay." otherButtonTitles:nil];
+        [alert show];  
+        [alert release];
+    }
+    
+
+    [self setTitle:currentService];
     serviceSelector = NSSelectorFromString([currentService lowercaseString]);
     
     

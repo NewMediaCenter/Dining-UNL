@@ -25,6 +25,8 @@ static int calendarShadowOffset = (int)-20;
 @synthesize menuDate;
 @synthesize availableDateArray;
 @synthesize locationManager;
+@synthesize dayButton;
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -37,28 +39,31 @@ static int calendarShadowOffset = (int)-20;
 
 - (void)viewDidLoad
 {
-    [super viewDidLoad];
-    NSLog(@"its working");
-    [tableView setDelegate:self];
-    [tableView setDataSource:self];
-    apiController = [[DiningHallAPIController alloc] init];
-    locationManager = [[CLLocationManager alloc] init];
-    menuDate =  [[NSDate alloc] init]; //init NSdate and load todays date
-    hallList = [[NSMutableArray alloc] initWithArray:[apiController getCurrentHalls]];
-    availableDateArray = [apiController getAvailableDates];
-    // lets make a calandar!
-    calendar = 	[[TKCalendarMonthView alloc] init];
-    calendar.delegate = self;
-    calendar.dataSource = self;
     
     //Lets get the users current Location -- 
-    
+    locationManager = [[CLLocationManager alloc] init];
+
     if ([CLLocationManager locationServicesEnabled])
     {
         
         [locationManager setDelegate:self];
         [locationManager startUpdatingLocation];
     }
+    
+    [tableView setDelegate:self];
+    [tableView setDataSource:self];
+    apiController = [[DiningHallAPIController alloc] init];
+    menuDate =  [[NSDate alloc] init]; //init NSdate and load todays date
+    hallList = [[NSMutableArray alloc] initWithArray:[apiController getCurrentHalls]];
+    availableDateArray = [apiController getAvailableDates];
+    [super viewDidLoad];
+    NSLog(@"its working");
+    // lets make a calandar!
+    calendar = 	[[TKCalendarMonthView alloc] init];
+    calendar.delegate = self;
+    calendar.dataSource = self;
+    
+    
     
     // Add Calendar to just off the top of the screen so it can later slide down
     calendar.frame = CGRectMake(0, -calendar.frame.size.height+calendarShadowOffset, calendar.frame.size.width, calendar.frame.size.height);
@@ -98,7 +103,9 @@ static int calendarShadowOffset = (int)-20;
     
     
     [[cell textLabel] setText:[h hallName]];
-
+    NSString *detailString = [NSString stringWithFormat:@"%i", [h distanceFromCurrentLocation]];
+    [[cell detailTextLabel] setText: [detailString stringByAppendingString:@" m away"]];
+    
    
     
     return cell;
@@ -134,10 +141,15 @@ static int calendarShadowOffset = (int)-20;
         
         int distance = [newLocation distanceFromLocation:[currentHall hallCoord]];
         [currentHall setDistanceFromCurrentLocation: distance];
-        [tableView reloadData];
         NSLog(@"Distance: %i", distance);
     }
+    
+    
+    [hallList sortUsingSelector:@selector(compareDistance:)];
+    [tableView reloadData];
 }
+
+
 
 - (void)viewDidUnload
 {
@@ -177,15 +189,18 @@ static int calendarShadowOffset = (int)-20;
 #pragma mark TK Cal Begin
 - (IBAction)toggleCalendar {
     NSLog(@"CAL TOGGLE");
+    
 	// If calendar is off the screen, show it, else hide it (both with animations)
 	if (calendar.frame.origin.y == -calendar.frame.size.height+calendarShadowOffset) {
 		// Show
+        [dayButton setTitle:@"Close Calendar"];
 		[UIView beginAnimations:nil context:NULL];
 		[UIView setAnimationDuration:.75];
 		calendar.frame = CGRectMake(0, 0, calendar.frame.size.width, calendar.frame.size.height);
 		[UIView commitAnimations];
 	} else {
 		// Hide
+        [dayButton setTitle:@"Day..."];
 		[UIView beginAnimations:nil context:NULL];
 		[UIView setAnimationDuration:.75];
 		calendar.frame = CGRectMake(0, -calendar.frame.size.height+calendarShadowOffset, calendar.frame.size.width, calendar.frame.size.height);		

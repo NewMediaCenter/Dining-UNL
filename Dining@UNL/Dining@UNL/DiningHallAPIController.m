@@ -45,7 +45,7 @@
         CLLocationDegrees longitude = [[TBXML textForElement:longitudeElement] doubleValue];
         CLLocation *location = [[CLLocation alloc] initWithLatitude:latitude longitude:longitude];
         [currentHall setHallCoord: location];
-       
+        
         
         //and lets add it to the array
         [hallList addObject:currentHall];
@@ -93,7 +93,7 @@
         
         
     }
-    
+    [df setTimeZone:[NSTimeZone timeZoneWithName:@"CST"]];
     return availableDates;
 
 }
@@ -127,7 +127,9 @@
     // Lets get the date real quick...
     TBXMLElement *serviceDate = [TBXML childElementNamed:@"ServiceDate" parentElement:tbxml.rootXMLElement];
     
-    [df setDateFormat:@"MM/dd/yyyy"];
+    [df setDateFormat:@"MM-dd-yyyy"];
+//    [df setTimeZone:[NSTimeZone timeZoneWithName:@"CST"]];
+    
     [resultDay setServiceDate:[df dateFromString: [TBXML textForElement:serviceDate]]];
     
     
@@ -137,15 +139,20 @@
     MealService *breakfast = [[MealService alloc] init];
     TBXMLElement *breakfastRoot = [TBXML childElementNamed:@"Breakfast" parentElement:tbxml.rootXMLElement];
     
+    //Lets take care of service times...
+    [df setDateFormat:@"yyyy'-'MM'-'dd'T'HH':'mm':'ss'-06:00"];
+    TBXMLElement *startTimeElement = [TBXML childElementNamed:@"MealStart" parentElement:breakfastRoot];
+    TBXMLElement *endTimeElement = [TBXML childElementNamed:@"MealEnd" parentElement:breakfastRoot];
+    [breakfast setServiceStartTime: [df dateFromString: [TBXML textForElement:startTimeElement]]];
+    [breakfast setServiceEndTime: [df dateFromString: [TBXML textForElement:endTimeElement]]];
+
     
     TBXMLElement *sectionRoot = [TBXML childElementNamed:@"MealCourse" 
                                            parentElement:breakfastRoot];
     
     while (sectionRoot) {
         FoodSection *currentSection = [[FoodSection alloc] init];
-        [currentSection setFoodSectionName: 
-         [TBXML valueOfAttributeNamed:@"value" 
-                           forElement:sectionRoot]]; // create the section and set the Name of the section, which is a attrib
+        [currentSection setFoodSectionName: [[TBXML valueOfAttributeNamed:@"value" forElement:sectionRoot] stringByReplacingOccurrencesOfString:@"&amp;" withString:@"&"]]; // create the section and set the Name of the section, which is a attrib
         
         
         // And now, we finally go over the individual food items.
@@ -161,7 +168,7 @@
             TBXMLElement *mealItemID = [TBXML childElementNamed:@"MealItemId" 
                                                   parentElement:currentFoodItem];
             
-            [currentItem setItemName: [TBXML textForElement:mealItem]];
+            [currentItem setItemName: [[TBXML textForElement:mealItem]stringByReplacingOccurrencesOfString:@"&amp;" withString:@"&"]];
             [currentItem setItemID: [[TBXML textForElement:mealItemID] intValue]];
             
             //Cool, lets store the Food item and go to the next one.
@@ -189,8 +196,11 @@
     MealService *lunch = [[MealService alloc] init];
     TBXMLElement *lunchRoot = [TBXML childElementNamed:@"Lunch" parentElement:tbxml.rootXMLElement];
     
-    
-    
+    //Lets take care of service times...
+     startTimeElement = [TBXML childElementNamed:@"MealStart" parentElement:lunchRoot];
+     endTimeElement = [TBXML childElementNamed:@"MealEnd" parentElement:lunchRoot];
+    [lunch setServiceStartTime: [df dateFromString: [TBXML textForElement:startTimeElement]]];
+    [lunch setServiceEndTime: [df dateFromString: [TBXML textForElement:endTimeElement]]];
     
     sectionRoot = [TBXML childElementNamed:@"MealCourse" 
                              parentElement:lunchRoot];
@@ -215,7 +225,7 @@
             TBXMLElement *mealItemID = [TBXML childElementNamed:@"MealItemId" 
                                                   parentElement:currentFoodItem];
             
-            [currentItem setItemName: [TBXML textForElement:mealItem]];
+            [currentItem setItemName: [[TBXML textForElement:mealItem]stringByReplacingOccurrencesOfString:@"&amp;" withString:@"&"]];
             [currentItem setItemID: [[TBXML textForElement:mealItemID] intValue]];
             
             //Cool, lets store the Food item and go to the next one.
@@ -239,10 +249,16 @@
     
     // and for dinner...
     MealService *dinner = [[MealService alloc] init];
-    TBXMLElement *dinnerRoot = [TBXML childElementNamed:@"Lunch" parentElement:tbxml.rootXMLElement];
+    TBXMLElement *dinnerRoot = [TBXML childElementNamed:@"Dinner" parentElement:tbxml.rootXMLElement];
+   
     
-    
-    
+    //Lets take care of service times...
+    startTimeElement = [TBXML childElementNamed:@"MealStart" parentElement:dinnerRoot];
+    endTimeElement = [TBXML childElementNamed:@"MealEnd" parentElement:dinnerRoot];
+    if (startTimeElement && endTimeElement){
+    [dinner setServiceStartTime: [df dateFromString: [TBXML textForElement:startTimeElement]]];
+    [dinner setServiceEndTime: [df dateFromString: [TBXML textForElement:endTimeElement]]];
+    }
     
     sectionRoot = [TBXML childElementNamed:@"MealCourse" 
                              parentElement:dinnerRoot];
@@ -267,7 +283,7 @@
             TBXMLElement *mealItemID = [TBXML childElementNamed:@"MealItemId" 
                                                   parentElement:currentFoodItem];
             
-            [currentItem setItemName: [TBXML textForElement:mealItem]];
+            [currentItem setItemName: [[TBXML textForElement:mealItem]stringByReplacingOccurrencesOfString:@"&amp;" withString:@"&"]];
             [currentItem setItemID: [[TBXML textForElement:mealItemID] intValue]];
             
             //Cool, lets store the Food item and go to the next one.
