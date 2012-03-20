@@ -130,6 +130,11 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="xsH-ur-0oW">
                         <nil key="title"/>
+                        <barButtonItem key="leftBarButtonItem" title="Feedback..." id="ZWd-1c-bj3">
+                            <connections>
+                                <action selector="launchFeedback" destination="Fgn-IZ-IGx" id="6Ll-bo-RN8"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Day..." id="PhE-3n-CK5">
                             <connections>
                                 <action selector="toggleCalendar" destination="Fgn-IZ-IGx" id="kPw-GL-VcB"/>
@@ -190,9 +195,7 @@
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" id="zzd-Mn-YuP">
-                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="action" id="goY-E7-xG2"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="zzd-Mn-YuP"/>
                     <connections>
                         <outlet property="menuView" destination="cnB-ye-9V2" id="sZv-OI-da8"/>
                         <outlet property="serviceChooser" destination="zaV-1b-hAP" id="wWU-vb-7dM"/>
@@ -206,24 +209,6 @@
         <image name="125-food.png" width="29" height="23"/>
         <image name="29-heart.png" width="24" height="21"/>
     </resources>
-    <classes>
-        <class className="MasterViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MasterViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="toggleCalendar"/>
-                <relationship kind="outlet" name="dayButton" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="MenuViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MenuViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="serviceSelectorDidChange"/>
-                <relationship kind="outlet" name="menuView" candidateClass="UITableView"/>
-                <relationship kind="outlet" name="serviceChooser" candidateClass="UISegmentedControl"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

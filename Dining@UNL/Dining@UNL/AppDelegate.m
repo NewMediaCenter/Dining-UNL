@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#define NSLog(__FORMAT__, ...) TFLog((@"%s [Line %d] " __FORMAT__), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__)
+
 
 @implementation AppDelegate
 
@@ -14,6 +16,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    [TestFlight takeOff:@"acb639f65a4d711be0991aae1e41ded3_NzMyODIyMDEyLTAzLTIwIDEzOjIwOjAwLjMzNDAzMA"];
     // Override point for customization after application launch.
     return YES;
 }

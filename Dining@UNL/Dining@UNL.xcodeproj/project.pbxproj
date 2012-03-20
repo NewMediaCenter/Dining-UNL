@@ -89,6 +89,9 @@
 		6EA1495214EA43B10036245B /* UIScrollview+TKCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EA1492014EA43B10036245B /* UIScrollview+TKCategory.m */; };
 		6EA1495314EA43B10036245B /* UIView+TKCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EA1492214EA43B10036245B /* UIView+TKCategory.m */; };
 		6EA1495414EA43B10036245B /* UIViewController+TKCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EA1492414EA43B10036245B /* UIViewController+TKCategory.m */; };
+		6EAE4E9E1518F31500538673 /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EAE4E9A1518F31500538673 /* libTestFlight.a */; };
+		6EAE4E9F1518F31500538673 /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = 6EAE4E9B1518F31500538673 /* README.txt */; };
+		6EAE4EA01518F31500538673 /* release_notes.txt in Resources */ = {isa = PBXBuildFile; fileRef = 6EAE4E9C1518F31500538673 /* release_notes.txt */; };
 		6EDBED5514E9DEF7006D6A6A /* 29-heart.png in Resources */ = {isa = PBXBuildFile; fileRef = 6EDBED5414E9DEF7006D6A6A /* 29-heart.png */; };
 /* End PBXBuildFile section */
 
@@ -262,6 +265,10 @@
 		6EA1492214EA43B10036245B /* UIView+TKCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+TKCategory.m"; sourceTree = "<group>"; };
 		6EA1492314EA43B10036245B /* UIViewController+TKCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+TKCategory.h"; sourceTree = "<group>"; };
 		6EA1492414EA43B10036245B /* UIViewController+TKCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+TKCategory.m"; sourceTree = "<group>"; };
+		6EAE4E9A1518F31500538673 /* libTestFlight.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libTestFlight.a; sourceTree = "<group>"; };
+		6EAE4E9B1518F31500538673 /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
+		6EAE4E9C1518F31500538673 /* release_notes.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = release_notes.txt; sourceTree = "<group>"; };
+		6EAE4E9D1518F31500538673 /* TestFlight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestFlight.h; sourceTree = "<group>"; };
 		6EDBED5414E9DEF7006D6A6A /* 29-heart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "29-heart.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -277,6 +284,7 @@
 				6E13FB411471B59100871973 /* UIKit.framework in Frameworks */,
 				6E13FB431471B59100871973 /* Foundation.framework in Frameworks */,
 				6E13FB451471B59100871973 /* CoreGraphics.framework in Frameworks */,
+				6EAE4E9E1518F31500538673 /* libTestFlight.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -350,6 +358,7 @@
 				6E13FB521471B59100871973 /* MainStoryboard.storyboard */,
 				6E13FB551471B59100871973 /* MasterViewController.h */,
 				6E13FB561471B59100871973 /* MasterViewController.m */,
+				6EAE4E991518F31500538673 /* TestFlightSDK */,
 				6E13FB581471B59100871973 /* first.png */,
 				6E13FB5A1471B59100871973 /* first@2x.png */,
 				6E13FB5C1471B59100871973 /* MenuViewController.h */,
@@ -518,6 +527,18 @@
 			path = TapkuLibrary;
 			sourceTree = "<group>";
 		};
+		6EAE4E991518F31500538673 /* TestFlightSDK */ = {
+			isa = PBXGroup;
+			children = (
+				6EAE4E9A1518F31500538673 /* libTestFlight.a */,
+				6EAE4E9B1518F31500538673 /* README.txt */,
+				6EAE4E9C1518F31500538673 /* release_notes.txt */,
+				6EAE4E9D1518F31500538673 /* TestFlight.h */,
+			);
+			name = TestFlightSDK;
+			path = TestFlightSDK0;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -623,6 +644,8 @@
 				6EDBED5514E9DEF7006D6A6A /* 29-heart.png in Resources */,
 				6EA148B614EA41FD0036245B /* TapkuLibrary.bundle in Resources */,
 				4377A9911506B92400636068 /* Default@2x.png in Resources */,
+				6EAE4E9F1518F31500538673 /* README.txt in Resources */,
+				6EAE4EA01518F31500538673 /* release_notes.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -819,6 +842,10 @@
 				GCC_PREFIX_HEADER = "Dining@UNL/Dining@UNL-Prefix.pch";
 				HEADER_SEARCH_PATHS = "Dining@UNL/TapkuLibrary";
 				INFOPLIST_FILE = "Dining@UNL/Dining@UNL-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Dining@UNL/TestFlightSDK0\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -828,11 +855,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Dining@UNL/Dining@UNL-Prefix.pch";
 				HEADER_SEARCH_PATHS = "Dining@UNL/TapkuLibrary";
 				INFOPLIST_FILE = "Dining@UNL/Dining@UNL-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Dining@UNL/TestFlightSDK0\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

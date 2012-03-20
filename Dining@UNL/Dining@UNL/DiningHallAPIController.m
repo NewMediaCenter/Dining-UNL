@@ -80,7 +80,7 @@
     
     while (currentElement){
         TBXMLElement *dateElement = [TBXML childElementNamed:@"MealDate" parentElement:currentElement];
-
+        
         
         
         date = [df dateFromString: [TBXML textForElement:dateElement]];
@@ -95,7 +95,7 @@
     }
     [df setTimeZone:[NSTimeZone timeZoneWithName:@"CST"]];
     return availableDates;
-
+    
 }
 
 -(ServiceDay *) getMealForDay:(NSDate *)day withHall:(Hall *)theHall
@@ -128,187 +128,189 @@
     TBXMLElement *serviceDate = [TBXML childElementNamed:@"ServiceDate" parentElement:tbxml.rootXMLElement];
     
     [df setDateFormat:@"MM-dd-yyyy"];
-//    [df setTimeZone:[NSTimeZone timeZoneWithName:@"CST"]];
-    
-    [resultDay setServiceDate:[df dateFromString: [TBXML textForElement:serviceDate]]];
-    
-    
-    // while ([tbxml rootXMLElement]){
-    
-    //Lets Start With Breakfast...
-    MealService *breakfast = [[MealService alloc] init];
-    TBXMLElement *breakfastRoot = [TBXML childElementNamed:@"Breakfast" parentElement:tbxml.rootXMLElement];
-    
-    //Lets take care of service times...
-    [df setDateFormat:@"yyyy'-'MM'-'dd'T'HH':'mm':'ss'-06:00"];
-    TBXMLElement *startTimeElement = [TBXML childElementNamed:@"MealStart" parentElement:breakfastRoot];
-    TBXMLElement *endTimeElement = [TBXML childElementNamed:@"MealEnd" parentElement:breakfastRoot];
-    [breakfast setServiceStartTime: [df dateFromString: [TBXML textForElement:startTimeElement]]];
-    [breakfast setServiceEndTime: [df dateFromString: [TBXML textForElement:endTimeElement]]];
-
-    
-    TBXMLElement *sectionRoot = [TBXML childElementNamed:@"MealCourse" 
-                                           parentElement:breakfastRoot];
-    
-    while (sectionRoot) {
-        FoodSection *currentSection = [[FoodSection alloc] init];
-        [currentSection setFoodSectionName: [[TBXML valueOfAttributeNamed:@"value" forElement:sectionRoot] stringByReplacingOccurrencesOfString:@"&amp;" withString:@"&"]]; // create the section and set the Name of the section, which is a attrib
+    //    [df setTimeZone:[NSTimeZone timeZoneWithName:@"CST"]];
+    while (currentElement) { 
         
-        
-        // And now, we finally go over the individual food items.
-        TBXMLElement *currentFoodItem = [TBXML childElementNamed:@"FoodItem"
-                                                   parentElement:sectionRoot];
-        
-        while (currentFoodItem) {
-            FoodItem *currentItem = [[FoodItem alloc] init];
-            // We need to populate the two subelements and get their info...
-            TBXMLElement *mealItem = [TBXML childElementNamed:@"MealItem" 
-                                                parentElement:currentFoodItem];
-            
-            TBXMLElement *mealItemID = [TBXML childElementNamed:@"MealItemId" 
-                                                  parentElement:currentFoodItem];
-            
-            [currentItem setItemName: [[TBXML textForElement:mealItem]stringByReplacingOccurrencesOfString:@"&amp;" withString:@"&"]];
-            [currentItem setItemID: [[TBXML textForElement:mealItemID] intValue]];
-            
-            //Cool, lets store the Food item and go to the next one.
-            [[currentSection foodItems] addObject:currentItem];
-            
-            //  currentItem = nil; // we clean up for this item block
-            currentFoodItem = [TBXML nextSiblingNamed:@"FoodItem"      
-                                    searchFromElement:currentFoodItem]; // get the next one...
-        } // End current Food Items Block
-        [[breakfast sectionArray] addObject:currentSection];
-        //  currentSection = nil;
-        sectionRoot = [TBXML nextSiblingNamed:@"MealCourse" 
-                            searchFromElement:sectionRoot];
-        
-        
-    } // end food section block
-    
-    [resultDay setBreakfast:breakfast]; // and finally we store breakfast.
-    
-    // end breakfast
-    
-    
-    
-    // and for lunch...
-    MealService *lunch = [[MealService alloc] init];
-    TBXMLElement *lunchRoot = [TBXML childElementNamed:@"Lunch" parentElement:tbxml.rootXMLElement];
-    
-    //Lets take care of service times...
-     startTimeElement = [TBXML childElementNamed:@"MealStart" parentElement:lunchRoot];
-     endTimeElement = [TBXML childElementNamed:@"MealEnd" parentElement:lunchRoot];
-    [lunch setServiceStartTime: [df dateFromString: [TBXML textForElement:startTimeElement]]];
-    [lunch setServiceEndTime: [df dateFromString: [TBXML textForElement:endTimeElement]]];
-    
-    sectionRoot = [TBXML childElementNamed:@"MealCourse" 
-                             parentElement:lunchRoot];
-    
-    while (sectionRoot) {
-        FoodSection *currentSection = [[FoodSection alloc] init];
-        [currentSection setFoodSectionName: 
-         [TBXML valueOfAttributeNamed:@"value" 
-                           forElement:sectionRoot]]; // create the section and set the Name of the section, which is a attrib
-        
-        
-        // And now, we finally go over the individual food items.
-        TBXMLElement *currentFoodItem = [TBXML childElementNamed:@"FoodItem"
-                                                   parentElement:sectionRoot];
-        
-        while (currentFoodItem) {
-            FoodItem *currentItem = [[FoodItem alloc] init];
-            // We need to populate the two subelements and get their info...
-            TBXMLElement *mealItem = [TBXML childElementNamed:@"MealItem" 
-                                                parentElement:currentFoodItem];
-            
-            TBXMLElement *mealItemID = [TBXML childElementNamed:@"MealItemId" 
-                                                  parentElement:currentFoodItem];
-            
-            [currentItem setItemName: [[TBXML textForElement:mealItem]stringByReplacingOccurrencesOfString:@"&amp;" withString:@"&"]];
-            [currentItem setItemID: [[TBXML textForElement:mealItemID] intValue]];
-            
-            //Cool, lets store the Food item and go to the next one.
-            [[currentSection foodItems] addObject:currentItem];
-            
-            //  currentItem = nil; // we clean up for this item block
-            currentFoodItem = [TBXML nextSiblingNamed:@"FoodItem"      
-                                    searchFromElement:currentFoodItem]; // get the next one...
-        } // End current Food Items Block
-        [[lunch sectionArray] addObject:currentSection];
-        //  currentSection = nil;
-        sectionRoot = [TBXML nextSiblingNamed:@"MealCourse" 
-                            searchFromElement:sectionRoot];
-        
-        
-    } // end food section block
-    
-    [resultDay setLunch:lunch]; // and finally we store lunch.
-    
-    // end lunch
-    
-    // and for dinner...
-    MealService *dinner = [[MealService alloc] init];
-    TBXMLElement *dinnerRoot = [TBXML childElementNamed:@"Dinner" parentElement:tbxml.rootXMLElement];
-   
-    
-    //Lets take care of service times...
-    startTimeElement = [TBXML childElementNamed:@"MealStart" parentElement:dinnerRoot];
-    endTimeElement = [TBXML childElementNamed:@"MealEnd" parentElement:dinnerRoot];
-    if (startTimeElement && endTimeElement){
-    [dinner setServiceStartTime: [df dateFromString: [TBXML textForElement:startTimeElement]]];
-    [dinner setServiceEndTime: [df dateFromString: [TBXML textForElement:endTimeElement]]];
+        [resultDay setServiceDate:[df dateFromString: [TBXML textForElement:serviceDate]]];
     }
-    
-    sectionRoot = [TBXML childElementNamed:@"MealCourse" 
-                             parentElement:dinnerRoot];
-    
-    while (sectionRoot) {
-        FoodSection *currentSection = [[FoodSection alloc] init];
-        [currentSection setFoodSectionName: 
-         [TBXML valueOfAttributeNamed:@"value" 
-                           forElement:sectionRoot]]; // create the section and set the Name of the section, which is a attrib
+        
+        // while ([tbxml rootXMLElement]){
+        
+        //Lets Start With Breakfast...
+        MealService *breakfast = [[MealService alloc] init];
+        TBXMLElement *breakfastRoot = [TBXML childElementNamed:@"Breakfast" parentElement:tbxml.rootXMLElement];
+        
+        //Lets take care of service times...
+        [df setDateFormat:@"yyyy'-'MM'-'dd'T'HH':'mm':'ss'-06:00"];
+        TBXMLElement *startTimeElement = [TBXML childElementNamed:@"MealStart" parentElement:breakfastRoot];
+        TBXMLElement *endTimeElement = [TBXML childElementNamed:@"MealEnd" parentElement:breakfastRoot];
+        [breakfast setServiceStartTime: [df dateFromString: [TBXML textForElement:startTimeElement]]];
+        [breakfast setServiceEndTime: [df dateFromString: [TBXML textForElement:endTimeElement]]];
         
         
-        // And now, we finally go over the individual food items.
-        TBXMLElement *currentFoodItem = [TBXML childElementNamed:@"FoodItem"
-                                                   parentElement:sectionRoot];
+        TBXMLElement *sectionRoot = [TBXML childElementNamed:@"MealCourse" 
+                                               parentElement:breakfastRoot];
         
-        while (currentFoodItem) {
-            FoodItem *currentItem = [[FoodItem alloc] init];
-            // We need to populate the two subelements and get their info...
-            TBXMLElement *mealItem = [TBXML childElementNamed:@"MealItem" 
-                                                parentElement:currentFoodItem];
+        while (sectionRoot) {
+            FoodSection *currentSection = [[FoodSection alloc] init];
+            [currentSection setFoodSectionName: [[TBXML valueOfAttributeNamed:@"value" forElement:sectionRoot] stringByReplacingOccurrencesOfString:@"&amp;" withString:@"&"]]; // create the section and set the Name of the section, which is a attrib
             
-            TBXMLElement *mealItemID = [TBXML childElementNamed:@"MealItemId" 
-                                                  parentElement:currentFoodItem];
             
-            [currentItem setItemName: [[TBXML textForElement:mealItem]stringByReplacingOccurrencesOfString:@"&amp;" withString:@"&"]];
-            [currentItem setItemID: [[TBXML textForElement:mealItemID] intValue]];
+            // And now, we finally go over the individual food items.
+            TBXMLElement *currentFoodItem = [TBXML childElementNamed:@"FoodItem"
+                                                       parentElement:sectionRoot];
             
-            //Cool, lets store the Food item and go to the next one.
-            [[currentSection foodItems] addObject:currentItem];
+            while (currentFoodItem) {
+                FoodItem *currentItem = [[FoodItem alloc] init];
+                // We need to populate the two subelements and get their info...
+                TBXMLElement *mealItem = [TBXML childElementNamed:@"MealItem" 
+                                                    parentElement:currentFoodItem];
+                
+                TBXMLElement *mealItemID = [TBXML childElementNamed:@"MealItemId" 
+                                                      parentElement:currentFoodItem];
+                
+                [currentItem setItemName: [[TBXML textForElement:mealItem]stringByReplacingOccurrencesOfString:@"&amp;" withString:@"&"]];
+                [currentItem setItemID: [[TBXML textForElement:mealItemID] intValue]];
+                
+                //Cool, lets store the Food item and go to the next one.
+                [[currentSection foodItems] addObject:currentItem];
+                
+                //  currentItem = nil; // we clean up for this item block
+                currentFoodItem = [TBXML nextSiblingNamed:@"FoodItem"      
+                                        searchFromElement:currentFoodItem]; // get the next one...
+            } // End current Food Items Block
+            [[breakfast sectionArray] addObject:currentSection];
+            //  currentSection = nil;
+            sectionRoot = [TBXML nextSiblingNamed:@"MealCourse" 
+                                searchFromElement:sectionRoot];
             
-            //  currentItem = nil; // we clean up for this item block
-            currentFoodItem = [TBXML nextSiblingNamed:@"FoodItem"      
-                                    searchFromElement:currentFoodItem]; // get the next one...
-        } // End current Food Items Block
-        [[dinner sectionArray] addObject:currentSection];
-        //  currentSection = nil;
-        sectionRoot = [TBXML nextSiblingNamed:@"MealCourse" 
-                            searchFromElement:sectionRoot];
+            
+        } // end food section block
+        
+        [resultDay setBreakfast:breakfast]; // and finally we store breakfast.
+        
+        // end breakfast
         
         
-    } // end food section block
+        
+        // and for lunch...
+        MealService *lunch = [[MealService alloc] init];
+        TBXMLElement *lunchRoot = [TBXML childElementNamed:@"Lunch" parentElement:tbxml.rootXMLElement];
+        
+        //Lets take care of service times...
+        startTimeElement = [TBXML childElementNamed:@"MealStart" parentElement:lunchRoot];
+        endTimeElement = [TBXML childElementNamed:@"MealEnd" parentElement:lunchRoot];
+        [lunch setServiceStartTime: [df dateFromString: [TBXML textForElement:startTimeElement]]];
+        [lunch setServiceEndTime: [df dateFromString: [TBXML textForElement:endTimeElement]]];
+        
+        sectionRoot = [TBXML childElementNamed:@"MealCourse" 
+                                 parentElement:lunchRoot];
+        
+        while (sectionRoot) {
+            FoodSection *currentSection = [[FoodSection alloc] init];
+            [currentSection setFoodSectionName: 
+             [TBXML valueOfAttributeNamed:@"value" 
+                               forElement:sectionRoot]]; // create the section and set the Name of the section, which is a attrib
+            
+            
+            // And now, we finally go over the individual food items.
+            TBXMLElement *currentFoodItem = [TBXML childElementNamed:@"FoodItem"
+                                                       parentElement:sectionRoot];
+            
+            while (currentFoodItem) {
+                FoodItem *currentItem = [[FoodItem alloc] init];
+                // We need to populate the two subelements and get their info...
+                TBXMLElement *mealItem = [TBXML childElementNamed:@"MealItem" 
+                                                    parentElement:currentFoodItem];
+                
+                TBXMLElement *mealItemID = [TBXML childElementNamed:@"MealItemId" 
+                                                      parentElement:currentFoodItem];
+                
+                [currentItem setItemName: [[TBXML textForElement:mealItem]stringByReplacingOccurrencesOfString:@"&amp;" withString:@"&"]];
+                [currentItem setItemID: [[TBXML textForElement:mealItemID] intValue]];
+                
+                //Cool, lets store the Food item and go to the next one.
+                [[currentSection foodItems] addObject:currentItem];
+                
+                //  currentItem = nil; // we clean up for this item block
+                currentFoodItem = [TBXML nextSiblingNamed:@"FoodItem"      
+                                        searchFromElement:currentFoodItem]; // get the next one...
+            } // End current Food Items Block
+            [[lunch sectionArray] addObject:currentSection];
+            //  currentSection = nil;
+            sectionRoot = [TBXML nextSiblingNamed:@"MealCourse" 
+                                searchFromElement:sectionRoot];
+            
+            
+        } // end food section block
+        
+        [resultDay setLunch:lunch]; // and finally we store lunch.
+        
+        // end lunch
+        
+        // and for dinner...
+        MealService *dinner = [[MealService alloc] init];
+        TBXMLElement *dinnerRoot = [TBXML childElementNamed:@"Dinner" parentElement:tbxml.rootXMLElement];
+        
+        
+        //Lets take care of service times...
+        startTimeElement = [TBXML childElementNamed:@"MealStart" parentElement:dinnerRoot];
+        endTimeElement = [TBXML childElementNamed:@"MealEnd" parentElement:dinnerRoot];
+        if (startTimeElement && endTimeElement){
+            [dinner setServiceStartTime: [df dateFromString: [TBXML textForElement:startTimeElement]]];
+            [dinner setServiceEndTime: [df dateFromString: [TBXML textForElement:endTimeElement]]];
+        }
+        
+        sectionRoot = [TBXML childElementNamed:@"MealCourse" 
+                                 parentElement:dinnerRoot];
+        
+        while (sectionRoot) {
+            FoodSection *currentSection = [[FoodSection alloc] init];
+            [currentSection setFoodSectionName: 
+             [TBXML valueOfAttributeNamed:@"value" 
+                               forElement:sectionRoot]]; // create the section and set the Name of the section, which is a attrib
+            
+            
+            // And now, we finally go over the individual food items.
+            TBXMLElement *currentFoodItem = [TBXML childElementNamed:@"FoodItem"
+                                                       parentElement:sectionRoot];
+            
+            while (currentFoodItem) {
+                FoodItem *currentItem = [[FoodItem alloc] init];
+                // We need to populate the two subelements and get their info...
+                TBXMLElement *mealItem = [TBXML childElementNamed:@"MealItem" 
+                                                    parentElement:currentFoodItem];
+                
+                TBXMLElement *mealItemID = [TBXML childElementNamed:@"MealItemId" 
+                                                      parentElement:currentFoodItem];
+                
+                [currentItem setItemName: [[TBXML textForElement:mealItem]stringByReplacingOccurrencesOfString:@"&amp;" withString:@"&"]];
+                [currentItem setItemID: [[TBXML textForElement:mealItemID] intValue]];
+                
+                //Cool, lets store the Food item and go to the next one.
+                [[currentSection foodItems] addObject:currentItem];
+                
+                //  currentItem = nil; // we clean up for this item block
+                currentFoodItem = [TBXML nextSiblingNamed:@"FoodItem"      
+                                        searchFromElement:currentFoodItem]; // get the next one...
+            } // End current Food Items Block
+            [[dinner sectionArray] addObject:currentSection];
+            //  currentSection = nil;
+            sectionRoot = [TBXML nextSiblingNamed:@"MealCourse" 
+                                searchFromElement:sectionRoot];
+            
+            
+        } // end food section block
+        
+        [resultDay setDinner:dinner]; // and finally we store lunch.
+        //end dinner
+        
+        
+        
+        
+        //   } // end day
+        NSLog(@"The whole Day!: %@",[resultDay description]);
     
-    [resultDay setDinner:dinner]; // and finally we store lunch.
-    //end dinner
-    
-    
-    
-    
-    //   } // end day
-    NSLog(@"The whole Day!: %@",[resultDay description]);
     return resultDay;
 }
 

@@ -10,7 +10,8 @@
 #import "ServiceDay.h"
 #import "FoodSection.h"
 #import "FoodItem.h"
-
+#import "TestFlight.h"
+#define NSLog(__FORMAT__, ...) TFLog((@"%s [Line %d] " __FORMAT__), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__)
 
 @interface MenuViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 {

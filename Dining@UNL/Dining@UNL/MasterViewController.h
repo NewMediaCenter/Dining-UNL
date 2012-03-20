@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "DiningHallAPIController.h"
 #import "TKCalendarMonthView.h"
+#import "TestFlight.h"
+#define NSLog(__FORMAT__, ...) TFLog((@"%s [Line %d] " __FORMAT__), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__)
 
 @interface MasterViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, CLLocationManagerDelegate, TKCalendarMonthViewDelegate, TKCalendarMonthViewDataSource>
 {
@@ -21,6 +23,7 @@
     NSDate *menuDate;
     NSMutableArray *availableDateArray;
     CLLocationManager *locationManager;
+   
 }
 @property (nonatomic, retain) ServiceDay *menuForDay;
 @property (nonatomic, retain) IBOutlet UITableView *tableView;
@@ -34,5 +37,5 @@
 
 
 - (IBAction)toggleCalendar;
-
+- (IBAction)launchFeedback;
 @end

@@ -71,6 +71,7 @@ static int calendarShadowOffset = (int)-20;
 	[self.view addSubview:self.calendar];
 	[calendar reload];
     [self setTitle: @"Menu For Today"];
+    [TestFlight passCheckpoint:@"AppLaunchedCorrectly"];
     
 }
 
@@ -128,6 +129,7 @@ static int calendarShadowOffset = (int)-20;
         Hall *theHall = [hallList objectAtIndex:[self->tableView indexPathForSelectedRow].row];
         menuForDay = [apiController getMealForDay:menuDate withHall:theHall];
         [detailViewController setHallMenu:menuForDay];
+        [TestFlight passCheckpoint:@"SelectedHall"];
         
 
     }
@@ -206,6 +208,7 @@ static int calendarShadowOffset = (int)-20;
 		calendar.frame = CGRectMake(0, -calendar.frame.size.height+calendarShadowOffset, calendar.frame.size.width, calendar.frame.size.height);		
 		[UIView commitAnimations];
 	}	
+    [TestFlight passCheckpoint:@"CalToggled"];
 }
 
 #pragma mark -
@@ -229,10 +232,15 @@ static int calendarShadowOffset = (int)-20;
     [self toggleCalendar];
     }
     else {
+        bool shown = false;
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"No Data For That Day" message:@"There is no data for the day you selected. Please select another day." delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil];
-        [alert show];
-        [monthView selectDate:menuDate];
-        [alert release];
+        if (!shown) {
+            shown = true;
+            [alert show];
+            [monthView selectDate:menuDate];
+            [alert release]; 
+            [TestFlight passCheckpoint:@"SelectedBadDate"];
+        }
         return;
     }
     
@@ -296,6 +304,12 @@ static int calendarShadowOffset = (int)-20;
 	[offsetComponents release];
 	
 	return [NSArray arrayWithArray:marks];
+}
+
+#pragma mark Feedback Launcher
+
+-(IBAction)launchFeedback {
+    [TestFlight openFeedbackView];
 }
 
 @end

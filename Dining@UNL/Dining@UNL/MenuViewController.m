@@ -24,6 +24,7 @@
 
 - (void)viewDidLoad
 {
+    
 	[super viewDidLoad];
     NSLog(@"Menu Side Working");
     [menuView setDelegate:self];
@@ -113,11 +114,14 @@
     serviceSelector = NSSelectorFromString([currentService lowercaseString]);
     [self setTitle: currentService];
     NSLog(@"Current Service is Now: %@", currentService);
+    
     [menuView reloadData];
+    [TestFlight passCheckpoint:@"SelectedDifferentService"];
 }
 
 - (void)viewDidUnload
 {
+    [TestFlight passCheckpoint:@"UnloadedMenu"];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
