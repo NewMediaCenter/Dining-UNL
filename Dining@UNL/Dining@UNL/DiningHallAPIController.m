@@ -128,11 +128,12 @@
     TBXMLElement *serviceDate = [TBXML childElementNamed:@"ServiceDate" parentElement:tbxml.rootXMLElement];
     
     [df setDateFormat:@"MM-dd-yyyy"];
-    //    [df setTimeZone:[NSTimeZone timeZoneWithName:@"CST"]];
-    while (currentElement) { 
-        
+   
+    
+    if ([TBXML textForElement:tbxml.rootXMLElement] != @"Error"){ // Checking against an error condition
+           
         [resultDay setServiceDate:[df dateFromString: [TBXML textForElement:serviceDate]]];
-    }
+        
         
         // while ([tbxml rootXMLElement]){
         
@@ -310,7 +311,15 @@
         
         //   } // end day
         NSLog(@"The whole Day!: %@",[resultDay description]);
+    } else  { UIAlertView *message = [[UIAlertView alloc] initWithTitle:@"Something Went Wrong!"
+                                                              message:@"An Error was generated as we tried to get data from the API. This is probably due to a problem with the Database. Please make another selection or try again later."
+                                                             delegate:nil
+                                                    cancelButtonTitle:@"OK"
+                                                    otherButtonTitles:nil];
+        [message show];
+        return nil;
     
+    }
     return resultDay;
 }
 
