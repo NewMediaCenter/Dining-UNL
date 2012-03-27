@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4365680D1521EB370096D542 /* FavoritesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4365680C1521EB370096D542 /* FavoritesViewController.m */; };
+		436568101521EB6B0096D542 /* FavoritesDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4365680F1521EB6B0096D542 /* FavoritesDataController.m */; };
 		4377A9911506B92400636068 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4377A9901506B92400636068 /* Default@2x.png */; };
 		43E3F3AF14DC76BD00876DEA /* dining-unl.png in Resources */ = {isa = PBXBuildFile; fileRef = 43E3F3AE14DC76BD00876DEA /* dining-unl.png */; };
 		6E13FB411471B59100871973 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E13FB401471B59100871973 /* UIKit.framework */; };
@@ -34,7 +36,6 @@
 		6E20477314B399E0008A165F /* DiningHallAPIController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E20477214B399E0008A165F /* DiningHallAPIController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		6E20477514B39A59008A165F /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E20477414B39A59008A165F /* MapKit.framework */; };
 		6E20477714B39B57008A165F /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E20477614B39B57008A165F /* CoreLocation.framework */; };
-		6E5176BC1487F1ED004D0C11 /* Favorites.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6E5176BA1487F1ED004D0C11 /* Favorites.xcdatamodeld */; };
 		6E5176C01487F3DC004D0C11 /* FoodItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E5176BF1487F3DC004D0C11 /* FoodItem.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		6E594FD614BF7B08007EB571 /* NSDataAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E594FD314BF7B08007EB571 /* NSDataAdditions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		6E594FD714BF7B08007EB571 /* TBXML.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E594FD514BF7B08007EB571 /* TBXML.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -120,6 +121,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4365680B1521EB370096D542 /* FavoritesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavoritesViewController.h; sourceTree = "<group>"; };
+		4365680C1521EB370096D542 /* FavoritesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavoritesViewController.m; sourceTree = "<group>"; };
+		4365680E1521EB6B0096D542 /* FavoritesDataController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavoritesDataController.h; sourceTree = "<group>"; };
+		4365680F1521EB6B0096D542 /* FavoritesDataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavoritesDataController.m; sourceTree = "<group>"; };
 		4377A9901506B92400636068 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		43E3F3AE14DC76BD00876DEA /* dining-unl.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dining-unl.png"; sourceTree = "<group>"; };
 		6E13FB3C1471B59100871973 /* Dining@UNL.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Dining@UNL.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -159,7 +164,6 @@
 		6E20477214B399E0008A165F /* DiningHallAPIController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiningHallAPIController.m; sourceTree = "<group>"; };
 		6E20477414B39A59008A165F /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		6E20477614B39B57008A165F /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		6E5176BB1487F1ED004D0C11 /* Favorites.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Favorites.xcdatamodel; sourceTree = "<group>"; };
 		6E5176BE1487F3DC004D0C11 /* FoodItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoodItem.h; sourceTree = "<group>"; };
 		6E5176BF1487F3DC004D0C11 /* FoodItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FoodItem.m; sourceTree = "<group>"; };
 		6E594FD214BF7B08007EB571 /* NSDataAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDataAdditions.h; sourceTree = "<group>"; };
@@ -356,6 +360,10 @@
 				6E13FB4F1471B59100871973 /* AppDelegate.h */,
 				6E13FB501471B59100871973 /* AppDelegate.m */,
 				6E13FB521471B59100871973 /* MainStoryboard.storyboard */,
+				4365680B1521EB370096D542 /* FavoritesViewController.h */,
+				4365680C1521EB370096D542 /* FavoritesViewController.m */,
+				4365680E1521EB6B0096D542 /* FavoritesDataController.h */,
+				4365680F1521EB6B0096D542 /* FavoritesDataController.m */,
 				6E13FB551471B59100871973 /* MasterViewController.h */,
 				6E13FB561471B59100871973 /* MasterViewController.m */,
 				6EAE4E991518F31500538673 /* TestFlightSDK */,
@@ -366,7 +374,6 @@
 				6E13FB5F1471B59100871973 /* second.png */,
 				6E13FB611471B59100871973 /* second@2x.png */,
 				6E13FB471471B59100871973 /* Supporting Files */,
-				6E5176BA1487F1ED004D0C11 /* Favorites.xcdatamodeld */,
 				6E5176BE1487F3DC004D0C11 /* FoodItem.h */,
 				6E20476414B3994A008A165F /* FoodSection.h */,
 				6E20476814B39997008A165F /* MealService.h */,
@@ -684,7 +691,6 @@
 				6E13FB511471B59100871973 /* AppDelegate.m in Sources */,
 				6E13FB571471B59100871973 /* MasterViewController.m in Sources */,
 				6E13FB5E1471B59100871973 /* MenuViewController.m in Sources */,
-				6E5176BC1487F1ED004D0C11 /* Favorites.xcdatamodeld in Sources */,
 				6E5176C01487F3DC004D0C11 /* FoodItem.m in Sources */,
 				6E20476614B3994A008A165F /* FoodSection.m in Sources */,
 				6E20476A14B39997008A165F /* MealService.m in Sources */,
@@ -739,6 +745,8 @@
 				6EA1495214EA43B10036245B /* UIScrollview+TKCategory.m in Sources */,
 				6EA1495314EA43B10036245B /* UIView+TKCategory.m in Sources */,
 				6EA1495414EA43B10036245B /* UIViewController+TKCategory.m in Sources */,
+				4365680D1521EB370096D542 /* FavoritesViewController.m in Sources */,
+				436568101521EB6B0096D542 /* FavoritesDataController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -819,6 +827,7 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -828,6 +837,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -935,19 +945,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		6E5176BA1487F1ED004D0C11 /* Favorites.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				6E5176BB1487F1ED004D0C11 /* Favorites.xcdatamodel */,
-			);
-			currentVersion = 6E5176BB1487F1ED004D0C11 /* Favorites.xcdatamodel */;
-			path = Favorites.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 6E13FB331471B59000871973 /* Project object */;
 }
