@@ -215,7 +215,7 @@ static int calendarShadowOffset = (int)-20;
 #pragma mark TKCalendarMonthViewDelegate methods
 
 - (void)calendarMonthView:(TKCalendarMonthView *)monthView didSelectDate:(NSDate *)d {
-	if ([availableDateArray containsObject:d])
+	 if ([availableDateArray containsObject:d]) 
     {
     
     NSLog(@"Date Selected: %@", d);
@@ -237,8 +237,8 @@ static int calendarShadowOffset = (int)-20;
         if (!shown) {
             shown = true;
             [alert show];
-            [monthView selectDate:menuDate];
             [alert release]; 
+            [monthView selectDate:menuDate];
             [TestFlight passCheckpoint:@"SelectedBadDate"];
         }
         return;

@@ -305,6 +305,38 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		43AC5DD015233EF80021A4CE /* Data Model */ = {
+			isa = PBXGroup;
+			children = (
+				6E5176BE1487F3DC004D0C11 /* FoodItem.h */,
+				6E20476414B3994A008A165F /* FoodSection.h */,
+				6E20476814B39997008A165F /* MealService.h */,
+				6E20476B14B399B5008A165F /* ServiceDay.h */,
+				6E20476E14B399C6008A165F /* Hall.h */,
+				6E20476F14B399C6008A165F /* Hall.m */,
+				6E20476C14B399B5008A165F /* ServiceDay.m */,
+				6E20476914B39997008A165F /* MealService.m */,
+				6E20476514B3994A008A165F /* FoodSection.m */,
+				6E5176BF1487F3DC004D0C11 /* FoodItem.m */,
+			);
+			name = "Data Model";
+			sourceTree = "<group>";
+		};
+		43AC5DD115233F310021A4CE /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				4365680B1521EB370096D542 /* FavoritesViewController.h */,
+				4365680C1521EB370096D542 /* FavoritesViewController.m */,
+				4365680E1521EB6B0096D542 /* FavoritesDataController.h */,
+				4365680F1521EB6B0096D542 /* FavoritesDataController.m */,
+				6E13FB551471B59100871973 /* MasterViewController.h */,
+				6E13FB561471B59100871973 /* MasterViewController.m */,
+				6E13FB5C1471B59100871973 /* MenuViewController.h */,
+				6E13FB5D1471B59100871973 /* MenuViewController.m */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
 		6E00361F14EA454900EB4D56 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -360,32 +392,16 @@
 				6E13FB4F1471B59100871973 /* AppDelegate.h */,
 				6E13FB501471B59100871973 /* AppDelegate.m */,
 				6E13FB521471B59100871973 /* MainStoryboard.storyboard */,
-				4365680B1521EB370096D542 /* FavoritesViewController.h */,
-				4365680C1521EB370096D542 /* FavoritesViewController.m */,
-				4365680E1521EB6B0096D542 /* FavoritesDataController.h */,
-				4365680F1521EB6B0096D542 /* FavoritesDataController.m */,
-				6E13FB551471B59100871973 /* MasterViewController.h */,
-				6E13FB561471B59100871973 /* MasterViewController.m */,
+				43AC5DD115233F310021A4CE /* View Controllers */,
 				6EAE4E991518F31500538673 /* TestFlightSDK */,
 				6E13FB581471B59100871973 /* first.png */,
 				6E13FB5A1471B59100871973 /* first@2x.png */,
-				6E13FB5C1471B59100871973 /* MenuViewController.h */,
-				6E13FB5D1471B59100871973 /* MenuViewController.m */,
 				6E13FB5F1471B59100871973 /* second.png */,
 				6E13FB611471B59100871973 /* second@2x.png */,
 				6E13FB471471B59100871973 /* Supporting Files */,
-				6E5176BE1487F3DC004D0C11 /* FoodItem.h */,
-				6E20476414B3994A008A165F /* FoodSection.h */,
-				6E20476814B39997008A165F /* MealService.h */,
-				6E20476B14B399B5008A165F /* ServiceDay.h */,
-				6E20476E14B399C6008A165F /* Hall.h */,
+				43AC5DD015233EF80021A4CE /* Data Model */,
 				6E20477114B399E0008A165F /* DiningHallAPIController.h */,
 				6E20477214B399E0008A165F /* DiningHallAPIController.m */,
-				6E20476F14B399C6008A165F /* Hall.m */,
-				6E20476C14B399B5008A165F /* ServiceDay.m */,
-				6E20476914B39997008A165F /* MealService.m */,
-				6E20476514B3994A008A165F /* FoodSection.m */,
-				6E5176BF1487F3DC004D0C11 /* FoodItem.m */,
 			);
 			path = "Dining@UNL";
 			sourceTree = "<group>";

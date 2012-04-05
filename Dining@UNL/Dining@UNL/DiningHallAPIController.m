@@ -66,6 +66,9 @@
     return hallList;
 }
 
+
+#pragma mark Available Dates
+
 - (NSMutableArray *) getAvailableDates
 {
     TBXML * tbxml = [TBXML tbxmlWithURL:[NSURL URLWithString:@"http://histestiis.unl.edu/menus/services/DailyMenu.aspx?action=getmealdates"]]; // Lets load the XML...
@@ -97,6 +100,8 @@
     return availableDates;
     
 }
+
+#pragma mark Menu Retrival
 
 -(ServiceDay *) getMealForDay:(NSDate *)day withHall:(Hall *)theHall
 {
@@ -130,7 +135,7 @@
     [df setDateFormat:@"MM-dd-yyyy"];
    
     
-    if ([TBXML textForElement:tbxml.rootXMLElement] != @"Error"){ // Checking against an error condition
+    if ([TBXML elementName:tbxml.rootXMLElement] != @"Error"){ // Checking against an error condition
            
         [resultDay setServiceDate:[df dateFromString: [TBXML textForElement:serviceDate]]];
         
@@ -311,7 +316,11 @@
         
         //   } // end day
         NSLog(@"The whole Day!: %@",[resultDay description]);
-    } else  { UIAlertView *message = [[UIAlertView alloc] initWithTitle:@"Something Went Wrong!"
+    } else  { 
+        NSString *err = [[NSString alloc] initWithString:[TBXML textForElement:tbxml.rootXMLElement]];
+        
+        if (err) [TestFlight passCheckpoint: [NSString stringWithFormat: @"Recieved an Error: %@", err]]; 
+        UIAlertView *message = [[UIAlertView alloc] initWithTitle:@"Something Went Wrong!"
                                                               message:@"An Error was generated as we tried to get data from the API. This is probably due to a problem with the Database. Please make another selection or try again later."
                                                              delegate:nil
                                                     cancelButtonTitle:@"OK"
