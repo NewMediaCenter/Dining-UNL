@@ -372,8 +372,8 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "100"
          endingLineNumber = "100"
-         landmarkName = "@implementation DiningHallAPIController"
-         landmarkType = "3">
+         landmarkName = "-getAvailableDates"
+         landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
@@ -411,8 +411,8 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "71"
          endingLineNumber = "71"
-         landmarkName = "-getAvailableDates"
-         landmarkType = "5">
+         landmarkName = "@implementation DiningHallAPIController"
+         landmarkType = "3">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"

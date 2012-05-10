@@ -37,6 +37,7 @@
 		6E20477514B39A59008A165F /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E20477414B39A59008A165F /* MapKit.framework */; };
 		6E20477714B39B57008A165F /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E20477614B39B57008A165F /* CoreLocation.framework */; };
 		6E5176C01487F3DC004D0C11 /* FoodItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E5176BF1487F3DC004D0C11 /* FoodItem.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		6E58A984153F59CD00EC8A94 /* FavoritesList.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E58A983153F59CD00EC8A94 /* FavoritesList.m */; };
 		6E594FD614BF7B08007EB571 /* NSDataAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E594FD314BF7B08007EB571 /* NSDataAdditions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		6E594FD714BF7B08007EB571 /* TBXML.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E594FD514BF7B08007EB571 /* TBXML.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		6E594FD914BF7C7B007EB571 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E594FD814BF7C7B007EB571 /* libz.dylib */; };
@@ -166,6 +167,8 @@
 		6E20477614B39B57008A165F /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		6E5176BE1487F3DC004D0C11 /* FoodItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoodItem.h; sourceTree = "<group>"; };
 		6E5176BF1487F3DC004D0C11 /* FoodItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FoodItem.m; sourceTree = "<group>"; };
+		6E58A982153F59CD00EC8A94 /* FavoritesList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavoritesList.h; sourceTree = "<group>"; };
+		6E58A983153F59CD00EC8A94 /* FavoritesList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavoritesList.m; sourceTree = "<group>"; };
 		6E594FD214BF7B08007EB571 /* NSDataAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDataAdditions.h; sourceTree = "<group>"; };
 		6E594FD314BF7B08007EB571 /* NSDataAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDataAdditions.m; sourceTree = "<group>"; };
 		6E594FD414BF7B08007EB571 /* TBXML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBXML.h; sourceTree = "<group>"; };
@@ -310,6 +313,8 @@
 			children = (
 				6E5176BE1487F3DC004D0C11 /* FoodItem.h */,
 				6E20476414B3994A008A165F /* FoodSection.h */,
+				6E58A982153F59CD00EC8A94 /* FavoritesList.h */,
+				6E58A983153F59CD00EC8A94 /* FavoritesList.m */,
 				6E20476814B39997008A165F /* MealService.h */,
 				6E20476B14B399B5008A165F /* ServiceDay.h */,
 				6E20476E14B399C6008A165F /* Hall.h */,
@@ -607,7 +612,7 @@
 		6E13FB331471B59000871973 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0420;
+				LastUpgradeCheck = 0430;
 			};
 			buildConfigurationList = 6E13FB361471B59000871973 /* Build configuration list for PBXProject "Dining@UNL" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -763,6 +768,7 @@
 				6EA1495414EA43B10036245B /* UIViewController+TKCategory.m in Sources */,
 				4365680D1521EB370096D542 /* FavoritesViewController.m in Sources */,
 				436568101521EB6B0096D542 /* FavoritesDataController.m in Sources */,
+				6E58A984153F59CD00EC8A94 /* FavoritesList.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -844,7 +850,7 @@
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: University of Nebraska";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
