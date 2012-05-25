@@ -40,6 +40,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                         <gestureRecognizers/>
+                        <imageView key="tableFooterView" userInteractionEnabled="NO" contentMode="center" image="R-N_4c.png" id="VQM-aO-Ytg">
+                            <rect key="frame" x="0.0" y="102" width="320" height="90"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </imageView>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="HallCell" textLabel="FkT-Ut-IA7" detailTextLabel="y39-VE-ejy" style="IBUITableViewCellStyleSubtitle" id="rO5-Hn-rhR">
                                 <rect key="frame" x="0.0" y="46" width="320" height="46"/>
@@ -80,7 +84,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="xsH-ur-0oW">
                         <nil key="title"/>
-                        <barButtonItem key="leftBarButtonItem" title="Feedback..." id="ZWd-1c-bj3">
+                        <barButtonItem key="leftBarButtonItem" title="Feedback" id="ZWd-1c-bj3">
                             <connections>
                                 <action selector="launchFeedback" destination="Fgn-IZ-IGx" id="6Ll-bo-RN8"/>
                             </connections>
@@ -125,6 +129,10 @@
                                         <action selector="serviceSelectorDidChange" destination="FZr-am-Y25" eventType="valueChanged" id="XnG-re-Rct"/>
                                     </connections>
                                 </segmentedControl>
+                                <imageView key="tableFooterView" userInteractionEnabled="NO" contentMode="center" image="R-N_4c.png" id="M1k-fU-zoT">
+                                    <rect key="frame" x="0.0" y="122" width="320" height="93"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                </imageView>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MenuCell" textLabel="ead-Lb-JWx" style="IBUITableViewCellStyleDefault" id="sw3-jH-HTW">
                                         <rect key="frame" x="0.0" y="66" width="320" height="46"/>
@@ -166,6 +174,7 @@
     </scenes>
     <resources>
         <image name="125-food.png" width="29" height="23"/>
+        <image name="R-N_4c.png" width="103" height="90"/>
     </resources>
     <classes>
         <class className="MasterViewController" superclassName="UIViewController">

@@ -62,6 +62,7 @@
 		6E5F2CB3155C5B1F008EAB9D /* release_notes.txt in Resources */ = {isa = PBXBuildFile; fileRef = 6E5F2CAF155C5B1F008EAB9D /* release_notes.txt */; };
 		6E67C16114E9D1AC00EBBEC2 /* 83-calendar.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E67C16014E9D1AC00EBBEC2 /* 83-calendar.png */; };
 		6E67C16414E9D1CD00EBBEC2 /* 125-food.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E67C16314E9D1CD00EBBEC2 /* 125-food.png */; };
+		6E7DCDC015704A3200A158D1 /* R-N_4c.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E7DCDBF15704A3200A158D1 /* R-N_4c.png */; };
 		6EA148B614EA41FD0036245B /* TapkuLibrary.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 6EA148AF14EA41FD0036245B /* TapkuLibrary.bundle */; };
 		6EA148C114EA42410036245B /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EA148C014EA42410036245B /* QuartzCore.framework */; };
 		6EA1492514EA43B10036245B /* NSArray+TKCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EA148C514EA43B10036245B /* NSArray+TKCategory.m */; };
@@ -212,6 +213,7 @@
 		6E5F2CB0155C5B1F008EAB9D /* TestFlight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestFlight.h; sourceTree = "<group>"; };
 		6E67C16014E9D1AC00EBBEC2 /* 83-calendar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "83-calendar.png"; sourceTree = "<group>"; };
 		6E67C16314E9D1CD00EBBEC2 /* 125-food.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "125-food.png"; sourceTree = "<group>"; };
+		6E7DCDBF15704A3200A158D1 /* R-N_4c.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "R-N_4c.png"; sourceTree = "<group>"; };
 		6EA148AF14EA41FD0036245B /* TapkuLibrary.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = TapkuLibrary.bundle; sourceTree = "<group>"; };
 		6EA148B014EA41FD0036245B /* TapkuLibrary.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = TapkuLibrary.xcodeproj; sourceTree = SOURCE_ROOT; };
 		6EA148C014EA42410036245B /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -446,6 +448,7 @@
 		6E13FB471471B59100871973 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				6E7DCDBF15704A3200A158D1 /* R-N_4c.png */,
 				6E2F8BBA15702DCC007A0F94 /* VOLFIcons */,
 				6EDBED5414E9DEF7006D6A6A /* 29-heart.png */,
 				6E67C16314E9D1CD00EBBEC2 /* 125-food.png */,
@@ -747,6 +750,7 @@
 				6E2F8BD815702DCC007A0F94 /* 7.png in Resources */,
 				6E2F8BD915702DCC007A0F94 /* 8.png in Resources */,
 				6E2F8BDA15702DCC007A0F94 /* 9.png in Resources */,
+				6E7DCDC015704A3200A158D1 /* R-N_4c.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
