@@ -19,7 +19,7 @@
 // Gets Current List of halls, and returns list as a NSMutableArray
 - (NSMutableArray *) getCurrentHalls 
 {
-    TBXML * tbxml = [TBXML tbxmlWithURL:[NSURL URLWithString:@"http://histestiis.unl.edu/menus/services/DailyMenu.aspx?action=getcomplexes"]]; // Lets load the XML...
+    TBXML * tbxml = [TBXML tbxmlWithURL:[NSURL URLWithString:@"http://menu.unl.edu/services/DailyMenu.aspx?action=getcomplexes"]]; // Lets load the XML...
     
     NSMutableArray *hallList = [[NSMutableArray alloc] init]; // Init our array containing our halls
     
@@ -71,7 +71,7 @@
 
 - (NSMutableArray *) getAvailableDates
 {
-    TBXML * tbxml = [TBXML tbxmlWithURL:[NSURL URLWithString:@"http://histestiis.unl.edu/menus/services/DailyMenu.aspx?action=getmealdates"]]; // Lets load the XML...
+    TBXML * tbxml = [TBXML tbxmlWithURL:[NSURL URLWithString:@"http://menu.unl.edu/services/DailyMenu.aspx?action=getmealdates"]]; // Lets load the XML...
     NSMutableArray *availableDates = [[NSMutableArray alloc] init]; // Init our array containing our halls
     
     
@@ -108,7 +108,7 @@
     NSLog(@"Day to be gotten: %@", day);
     NSDateFormatter *df = [[NSDateFormatter alloc] init];
     [df setDateFormat:@"MM-dd-yyyy"];
-    NSString *uriString =  [NSString stringWithFormat: @"http://histestiis.unl.edu/menus/services/dailymenu.aspx?action=getdailymenuforentireday&complexId=%u&mealdate=%@&Type=hierarchical", 
+    NSString *uriString =  [NSString stringWithFormat: @"http://menu.unl.edu/services/dailymenu.aspx?action=getdailymenuforentireday&complexId=%u&mealdate=%@&Type=hierarchical", 
                             theHall.hallID, [df stringFromDate:day]];
     TBXML * tbxml = nil;
     @try {
@@ -135,7 +135,7 @@
     [df setDateFormat:@"MM-dd-yyyy"];
    
     
-    if ([TBXML elementName:tbxml.rootXMLElement] != @"Error"){ // Checking against an error condition
+    if (![[TBXML elementName:tbxml.rootXMLElement] isEqualToString: @"Error"]){ // Checking against an error condition
            
         [resultDay setServiceDate:[df dateFromString: [TBXML textForElement:serviceDate]]];
         
@@ -175,7 +175,31 @@
                 TBXMLElement *mealItemID = [TBXML childElementNamed:@"MealItemId" 
                                                       parentElement:currentFoodItem];
                 
-                [currentItem setItemName: [[TBXML textForElement:mealItem]stringByReplacingOccurrencesOfString:@"&amp;" withString:@"&"]];
+#pragma mark Vegan/Ovo/Lacto Check
+                if([[TBXML textForElement:mealItem] hasSuffix:@"*"])
+                {
+                    [currentItem setIsVegan:TRUE];
+                }
+                if([[TBXML textForElement:mealItem] hasSuffix:@"-"])
+                {
+                    [currentItem setIsOvo:TRUE];
+                }
+                if([[TBXML textForElement:mealItem] hasSuffix:@"+"])
+                {
+                    [currentItem setIsLacto:TRUE];
+                }
+                if([[TBXML textForElement:mealItem] hasSuffix:@"="])
+                {
+                    [currentItem setIsOvo:TRUE];
+                    [currentItem setIsLacto:TRUE];
+                }
+                
+                [currentItem setItemName: [[[[[[TBXML textForElement:mealItem]
+                                                stringByReplacingOccurrencesOfString:@"&amp;" withString:@"&"] 
+                                                stringByReplacingOccurrencesOfString:@"+" withString:@""] 
+                                                stringByReplacingOccurrencesOfString:@"-" withString:@""] 
+                                                stringByReplacingOccurrencesOfString:@"*" withString:@""]
+                                                stringByReplacingOccurrencesOfString:@"=" withString:@""]];
                 [currentItem setItemID: [[TBXML textForElement:mealItemID] intValue]];
                 
                 //Cool, lets store the Food item and go to the next one.
@@ -231,8 +255,32 @@
                 
                 TBXMLElement *mealItemID = [TBXML childElementNamed:@"MealItemId" 
                                                       parentElement:currentFoodItem];
+             
+#pragma mark Vegan/Ovo/Lacto Check
+                if([[TBXML textForElement:mealItem] hasSuffix:@"*"])
+                {
+                    [currentItem setIsVegan:TRUE];
+                }
+                if([[TBXML textForElement:mealItem] hasSuffix:@"-"])
+                {
+                    [currentItem setIsOvo:TRUE];
+                }
+                if([[TBXML textForElement:mealItem] hasSuffix:@"+"])
+                {
+                    [currentItem setIsLacto:TRUE];
+                }
+                if([[TBXML textForElement:mealItem] hasSuffix:@"="])
+                {
+                    [currentItem setIsOvo:TRUE];
+                    [currentItem setIsLacto:TRUE];
+                }
                 
-                [currentItem setItemName: [[TBXML textForElement:mealItem]stringByReplacingOccurrencesOfString:@"&amp;" withString:@"&"]];
+                [currentItem setItemName: [[[[[[TBXML textForElement:mealItem]
+                                             stringByReplacingOccurrencesOfString:@"&amp;" withString:@"&"] 
+                                             stringByReplacingOccurrencesOfString:@"+" withString:@""] 
+                                             stringByReplacingOccurrencesOfString:@"-" withString:@""] 
+                                             stringByReplacingOccurrencesOfString:@"*" withString:@""]
+                                             stringByReplacingOccurrencesOfString:@"=" withString:@""]];
                 [currentItem setItemID: [[TBXML textForElement:mealItemID] intValue]];
                 
                 //Cool, lets store the Food item and go to the next one.
@@ -290,7 +338,32 @@
                 TBXMLElement *mealItemID = [TBXML childElementNamed:@"MealItemId" 
                                                       parentElement:currentFoodItem];
                 
-                [currentItem setItemName: [[TBXML textForElement:mealItem]stringByReplacingOccurrencesOfString:@"&amp;" withString:@"&"]];
+#pragma mark Vegan/Ovo/Lacto Check
+                if([[TBXML textForElement:mealItem] hasSuffix:@"*"])
+                {
+                    [currentItem setIsVegan:TRUE];
+                }
+                if([[TBXML textForElement:mealItem] hasSuffix:@"-"])
+                {
+                    [currentItem setIsOvo:TRUE];
+                }
+                if([[TBXML textForElement:mealItem] hasSuffix:@"+"])
+                {
+                    [currentItem setIsLacto:TRUE];
+                }
+                if([[TBXML textForElement:mealItem] hasSuffix:@"="])
+                {
+                    [currentItem setIsOvo:TRUE];
+                    [currentItem setIsLacto:TRUE];
+                }
+                
+                [currentItem setItemName: [[[[[[TBXML textForElement:mealItem]
+                                                stringByReplacingOccurrencesOfString:@"&amp;" withString:@"&"] 
+                                                stringByReplacingOccurrencesOfString:@"+" withString:@""] 
+                                                stringByReplacingOccurrencesOfString:@"-" withString:@""] 
+                                                stringByReplacingOccurrencesOfString:@"*" withString:@""]
+                                                stringByReplacingOccurrencesOfString:@"=" withString:@""]];
+                
                 [currentItem setItemID: [[TBXML textForElement:mealItemID] intValue]];
                 
                 //Cool, lets store the Food item and go to the next one.

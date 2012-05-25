@@ -17,5 +17,10 @@
 }
 @synthesize itemID;
 @synthesize itemName;
+@synthesize isVegan;
+@synthesize isOvo;
+@synthesize isLacto;
+@synthesize isFavorite;
+
 
 @end

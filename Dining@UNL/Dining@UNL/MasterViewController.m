@@ -104,8 +104,8 @@ static int calendarShadowOffset = (int)-20;
     
     
     [[cell textLabel] setText:[h hallName]];
-    NSString *detailString = [NSString stringWithFormat:@"%i", [h distanceFromCurrentLocation]];
-    [[cell detailTextLabel] setText: [detailString stringByAppendingString:@" m away"]];
+    NSString *detailString = [NSString stringWithFormat:@"%i", (int) ([h distanceFromCurrentLocation] * 3.28) ];
+    [[cell detailTextLabel] setText: [detailString stringByAppendingString:@" ft away"]];
     
    
     
@@ -143,7 +143,7 @@ static int calendarShadowOffset = (int)-20;
         
         int distance = [newLocation distanceFromLocation:[currentHall hallCoord]];
         [currentHall setDistanceFromCurrentLocation: distance];
-        NSLog(@"Distance: %i", distance);
+        // NSLog(@"Distance: %i", distance);
     }
     
     

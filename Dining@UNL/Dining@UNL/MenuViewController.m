@@ -92,6 +92,20 @@
     FoodSection *s = [[[hallMenu performSelector:serviceSelector] sectionArray] objectAtIndex:[indexPath section]] ;
     FoodItem *f = [[s foodItems] objectAtIndex:[indexPath row]];
    
+    int volfCount = 0;
+    if ([f isVegan]) volfCount += 1;
+    if ([f isOvo]) volfCount += 2;
+    if ([f isLacto]) volfCount += 4;
+    if ([f isFavorite]) volfCount += 8;
+    
+    NSString *volfString = [NSString stringWithFormat:@"%d.png", volfCount];
+    
+    
+    UIImage *volfImage = [UIImage imageNamed:volfString];
+    cell.accessoryView = [[UIImageView alloc] initWithImage:volfImage];
+    
+    
+    
     [[cell textLabel] setText:[[f itemName] stringByReplacingOccurrencesOfString:@"&amp;" withString:@"&"] ];
     
     
@@ -150,7 +164,7 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     // Return YES for supported orientations
-    return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
+    return YES;  //(interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
 }
 
 @end

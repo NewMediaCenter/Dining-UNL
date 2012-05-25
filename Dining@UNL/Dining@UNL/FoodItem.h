@@ -12,9 +12,16 @@
 {
     int itemID;
     NSString *itemName;
+    BOOL isVegan;
+    BOOL isOvo;
+    BOOL isLacto;
+    BOOL isFavorite;
 }
 -(NSString *)description;
 @property (nonatomic, retain) NSString* itemName;
 @property (nonatomic, readwrite) int itemID;
-
+@property (nonatomic, readwrite) BOOL isVegan;
+@property (nonatomic, readwrite) BOOL isOvo;
+@property (nonatomic, readwrite) BOOL isLacto;
+@property (nonatomic, readwrite) BOOL isFavorite;
 @end
