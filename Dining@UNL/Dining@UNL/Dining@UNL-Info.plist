@@ -10,7 +10,8 @@
 	<string>${EXECUTABLE_NAME}</string>
 	<key>CFBundleIconFiles</key>
 	<array>
-		<string>dining-unl.png</string>
+		<string>icon57.png</string>
+		<string>icon114.png</string>
 	</array>
 	<key>CFBundleIcons</key>
 	<dict>
@@ -18,10 +19,11 @@
 		<dict>
 			<key>CFBundleIconFiles</key>
 			<array>
-				<string>dining-unl.png</string>
+				<string>icon57.png</string>
+				<string>icon114.png</string>
 			</array>
 			<key>UIPrerenderedIcon</key>
-			<false/>
+			<true/>
 		</dict>
 		<key>UINewsstandIcon</key>
 		<dict>
@@ -51,6 +53,8 @@
 	<true/>
 	<key>UIMainStoryboardFile</key>
 	<string>MainStoryboard</string>
+	<key>UIPrerenderedIcon</key>
+	<true/>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>

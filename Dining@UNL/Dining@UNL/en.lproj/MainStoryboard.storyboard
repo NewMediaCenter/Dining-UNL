@@ -231,31 +231,6 @@
         <image name="Key320.png" width="320" height="462"/>
         <image name="R-N_4c.png" width="103" height="90"/>
     </resources>
-    <classes>
-        <class className="KeyViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/KeyViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="dismissView:"/>
-            </relationships>
-        </class>
-        <class className="MasterViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MasterViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="launchFeedback"/>
-                <relationship kind="action" name="toggleCalendar"/>
-                <relationship kind="outlet" name="dayButton" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="MenuViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MenuViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="serviceSelectorDidChange"/>
-                <relationship kind="outlet" name="menuView" candidateClass="UITableView"/>
-                <relationship kind="outlet" name="serviceChooser" candidateClass="UISegmentedControl"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
