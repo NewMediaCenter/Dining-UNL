@@ -227,6 +227,7 @@
 		6E7C6A40157826560015B68E /* icon512.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon512.png; sourceTree = "<group>"; };
 		6E7C6A41157826560015B68E /* icon57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon57.png; sourceTree = "<group>"; };
 		6E7DCDBF15704A3200A158D1 /* R-N_4c.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "R-N_4c.png"; sourceTree = "<group>"; };
+		6E9F1A55157964F4000E2E71 /* TapkuLibrary_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TapkuLibrary_Prefix.pch; sourceTree = "<group>"; };
 		6EA148AF14EA41FD0036245B /* TapkuLibrary.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = TapkuLibrary.bundle; sourceTree = "<group>"; };
 		6EA148B014EA41FD0036245B /* TapkuLibrary.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = TapkuLibrary.xcodeproj; sourceTree = SOURCE_ROOT; };
 		6EA148C014EA42410036245B /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -561,6 +562,7 @@
 		6EA148C314EA43B10036245B /* TapkuLibrary */ = {
 			isa = PBXGroup;
 			children = (
+				6E9F1A55157964F4000E2E71 /* TapkuLibrary_Prefix.pch */,
 				6EA148C414EA43B10036245B /* NSArray+TKCategory.h */,
 				6EA148C514EA43B10036245B /* NSArray+TKCategory.m */,
 				6EA148C614EA43B10036245B /* NSDate+TKCategory.h */,
