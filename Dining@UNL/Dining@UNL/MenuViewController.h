@@ -20,14 +20,18 @@
     NSString *currentService;
     IBOutlet UISegmentedControl *serviceChooser;
     SEL serviceSelector;
+    IBOutlet UIButton *helpButton;
+    IBOutlet UIImageView *imageView;
 
 }
 
 -(IBAction) serviceSelectorDidChange;
+-(IBAction) didSelectHelp;
 
 @property (nonatomic, retain) NSString *currentService;
 @property (nonatomic, retain) IBOutlet UISegmentedControl *serviceChooser;
 @property (nonatomic, retain) ServiceDay *hallMenu;
+@property (nonatomic, retain) IBOutlet UIButton *helpButton;
 
 
 @end

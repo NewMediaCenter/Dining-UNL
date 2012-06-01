@@ -10,6 +10,9 @@
 
 @implementation KeyViewController
 
+@synthesize imageView;
+
+
 //@synthesize gestureRecog;
 - (void)viewDidLoad
 {

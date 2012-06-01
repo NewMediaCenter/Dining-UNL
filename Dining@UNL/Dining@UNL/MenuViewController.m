@@ -7,11 +7,14 @@
 //
 
 #import "MenuViewController.h"
+#import "KeyViewController.h"
+
 
 @implementation MenuViewController
 @synthesize hallMenu;
 @synthesize currentService;
 @synthesize serviceChooser;
+@synthesize helpButton;
 
 
 - (void)didReceiveMemoryWarning
@@ -159,6 +162,32 @@
 - (void)viewDidDisappear:(BOOL)animated
 {
 	[super viewDidDisappear:animated];
+    
+    
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([[segue identifier] isEqualToString:@"toKey"]) {
+        KeyViewController *keyViewController = [segue destinationViewController];
+        UIInterfaceOrientation orientation = [UIApplication sharedApplication].statusBarOrientation;
+        
+       // NSLog(@"Orientation: %h", orientation);
+        if ((orientation == UIInterfaceOrientationPortrait) | (orientation == UIInterfaceOrientationPortraitUpsideDown ))
+        {
+            [keyViewController imageView].image = [UIImage imageNamed:@"Key320.png"];   
+        }
+        else if ((orientation == UIInterfaceOrientationLandscapeLeft) | (orientation == UIInterfaceOrientationLandscapeRight))
+        {
+            [keyViewController imageView].image = [UIImage imageNamed:@"KeyLandscape.png"]; 
+            
+        } else {
+            [NSException raise:NSInvalidArgumentException format:@"A orientation was detected that was not part of the four possible choices. This should never happen."];
+        }
+    [[keyViewController imageView] setNeedsDisplay];
+        
+        
+        
+    }
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation

@@ -12,10 +12,11 @@
 @interface KeyViewController : UIViewController <UIGestureRecognizerDelegate, UIActionSheetDelegate>
 {
    // IBOutlet UIGestureRecognizer *gestureRecog;
-
+    IBOutlet UIImageView *imageView;
 }
 //@property (nonatomic, retain) IBOutlet UIGestureRecognizer *gestureRecog;
 
+@property (nonatomic, retain) IBOutlet UIImageView *imageView;
 - (IBAction)dismissView:(id)sender;
 
 @end
