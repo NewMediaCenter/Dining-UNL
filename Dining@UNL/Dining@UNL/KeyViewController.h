@@ -13,10 +13,12 @@
 {
    // IBOutlet UIGestureRecognizer *gestureRecog;
     IBOutlet UIImageView *imageView;
+    UIImage *imageToLoad;
 }
 //@property (nonatomic, retain) IBOutlet UIGestureRecognizer *gestureRecog;
 
 @property (nonatomic, retain) IBOutlet UIImageView *imageView;
+@property (nonatomic, retain)  UIImage *imageToLoad;
 - (IBAction)dismissView:(id)sender;
 
 @end

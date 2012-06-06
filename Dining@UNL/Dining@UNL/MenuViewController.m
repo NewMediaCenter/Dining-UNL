@@ -168,22 +168,22 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([[segue identifier] isEqualToString:@"toKey"]) {
-        KeyViewController *keyViewController = [segue destinationViewController];
-        UIInterfaceOrientation orientation = [UIApplication sharedApplication].statusBarOrientation;
-        
-       // NSLog(@"Orientation: %h", orientation);
-        if ((orientation == UIInterfaceOrientationPortrait) | (orientation == UIInterfaceOrientationPortraitUpsideDown ))
-        {
-            [keyViewController imageView].image = [UIImage imageNamed:@"Key320.png"];   
-        }
-        else if ((orientation == UIInterfaceOrientationLandscapeLeft) | (orientation == UIInterfaceOrientationLandscapeRight))
-        {
-            [keyViewController imageView].image = [UIImage imageNamed:@"KeyLandscape.png"]; 
-            
-        } else {
-            [NSException raise:NSInvalidArgumentException format:@"A orientation was detected that was not part of the four possible choices. This should never happen."];
-        }
-    [[keyViewController imageView] setNeedsDisplay];
+//        KeyViewController *keyViewController = [segue destinationViewController];
+//        UIInterfaceOrientation orientation = [UIApplication sharedApplication].statusBarOrientation;
+//        
+//       // NSLog(@"Orientation: %h", orientation);
+//        if (UIInterfaceOrientationIsPortrait(orientation))
+//        {
+//            keyViewController.imageToLoad = [UIImage imageNamed:@"Key320.png"];   
+//        }
+//        else if (UIInterfaceOrientationIsLandscape(orientation))
+//        {
+//            keyViewController.imageToLoad = [UIImage imageNamed:@"KeyLandscape.png"]; 
+//            
+//        } else {
+//            [NSException raise:NSInvalidArgumentException format:@"A orientation was detected that was not part of the four possible choices. This should never happen."];
+//        }
+//    [[keyViewController imageView] setNeedsDisplay];
         
         
         

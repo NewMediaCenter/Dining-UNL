@@ -9,7 +9,7 @@
 #import "KeyViewController.h"
 
 @implementation KeyViewController
-
+@synthesize imageToLoad;
 @synthesize imageView;
 
 
@@ -32,6 +32,31 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
+    //KeyViewController *keyViewController = [segue destinationViewController];
+    UIInterfaceOrientation orientation = [UIApplication sharedApplication].statusBarOrientation;
+    
+    // NSLog(@"Orientation: %h", orientation);
+    if (UIInterfaceOrientationIsPortrait(orientation))
+    {
+        self.imageToLoad = [UIImage imageNamed:@"Key320.png"];
+        imageView.contentMode = UIViewContentModeBottom;
+        imageView.frame = CGRectMake(0, 224, 320, 236);
+        
+    }
+    else if (UIInterfaceOrientationIsLandscape(orientation))
+    {
+       self.imageToLoad = [UIImage imageNamed:@"KeyLandscape.png"]; 
+        imageView.contentMode = UIViewContentModeBottom;
+        imageView.frame = CGRectMake(0, self.view.frame.size.height / 2, self.view.frame.size.width, self.view.frame.size.height / 2);
+        
+        
+    } else {
+        [NSException raise:NSInvalidArgumentException format:@"A orientation was detected that was not part of the four possible choices. This should never happen."];
+    }
+    [[self imageView] setNeedsDisplay];
+    
+    if (imageToLoad) self.imageView.image = imageToLoad;
+    else
     [super viewWillAppear:animated];
 }
 
