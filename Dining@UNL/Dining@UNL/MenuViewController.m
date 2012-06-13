@@ -105,7 +105,7 @@
     
     
     UIImage *volfImage = [UIImage imageNamed:volfString];
-    cell.accessoryView = [[UIImageView alloc] initWithImage:volfImage];
+   // cell.accessoryView = [[UIImageView alloc] initWithImage:volfImage];  VOLF Disabled as per customer request
     
     
     
